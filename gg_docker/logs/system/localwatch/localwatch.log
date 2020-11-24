@@ -1,0 +1,6 @@
+[2020-11-23T19:43:12.384Z][DEBUG]-will keep the log files for the following lambdas	{"readingPath": "/greengrass/ggc/var/log/user", "lambdas": "map[]"}
+[2020-11-23T19:43:12.386Z][WARN]-failed to list the user log directory	{"path": "/greengrass/ggc/var/log/user"}
+[2020-11-23T19:44:34.444Z][DEBUG]-will keep the log files for the following lambdas	{"readingPath": "/greengrass/ggc/var/log/user", "lambdas": "map[]"}
+[2020-11-23T19:44:34.449Z][WARN]-failed to list the user log directory	{"path": "/greengrass/ggc/var/log/user"}
+[2020-11-23T19:47:01.255Z][DEBUG]-will keep the log files for the following lambdas	{"readingPath": "/greengrass/ggc/var/log/user", "lambdas": "map[]"}
+[2020-11-23T19:47:01.257Z][WARN]-failed to list the user log directory	{"path": "/greengrass/ggc/var/log/user"}

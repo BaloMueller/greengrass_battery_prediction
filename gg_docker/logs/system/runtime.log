@@ -1,0 +1,327 @@
+[2020-11-23T19:43:12.387Z][INFO]-===========================================
+[2020-11-23T19:43:12.387Z][INFO]-Greengrass Version: 1.11.0-RC2
+[2020-11-23T19:43:12.387Z][INFO]-Greengrass Root: /greengrass
+[2020-11-23T19:43:12.387Z][INFO]-Greengrass Write Directory: /greengrass/ggc
+[2020-11-23T19:43:12.387Z][INFO]-Group File Directory: /greengrass/ggc/deployment/group
+[2020-11-23T19:43:12.388Z][INFO]-Default Lambda UID: 999
+[2020-11-23T19:43:12.388Z][INFO]-Default Lambda GID: 997
+[2020-11-23T19:43:12.388Z][DEBUG]-Go version: go1.12.11
+[2020-11-23T19:43:12.388Z][DEBUG]-CoreThing Connection Config: 
+{
+	"Region": "eu-central-1",
+	"ThingArn": "arn:aws:iot:eu-central-1:128199939578:thing/gg_battery_predict_Core",
+	"IoTMQTTEndpoint": "a1weqdhxfcc06i-ats.iot.eu-central-1.amazonaws.com:8883",
+	"IoTHTTPEndpoint": "a1weqdhxfcc06i-ats.iot.eu-central-1.amazonaws.com:8443",
+	"GGMQTTPort": 8883,
+	"GGHTTPEndpoint": "greengrass-ats.iot.eu-central-1.amazonaws.com:8443",
+	"GGDaemonPort": 8000,
+	"GGMQTTKeepAlive": 600,
+	"GGMQTTMaxConnectionRetryInterval": 60,
+	"GGMQTTConnectTimeout": 30,
+	"GGMQTTPingTimeout": 30,
+	"GGMQTTOperationTimeout": 5,
+	"GGHTTPTimeout": 60,
+	"FIPSMode": false,
+	"CoreClientId": ""
+}
+[2020-11-23T19:43:12.388Z][DEBUG]-System Config: 
+{
+	"tmpDirectory": "",
+	"shadowSyncTimeout": 0,
+	"useOverlayWithTmpfs": false,
+	"disablePivotRoot": false
+}
+[2020-11-23T19:43:12.388Z][DEBUG]-Runtime Config: 
+{
+	"maxWorkItemCount": 1024,
+	"schedulingFrequency": 1000,
+	"maxConcurrentLimit": 25,
+	"lruSize": 25,
+	"cgroup": {
+		"useSystemd": true,
+		"mountPoint": null
+	},
+	"postStartHealthCheckTimeout": 60000,
+	"allowFunctionsToRunAsRoot": true,
+	"onSystemComponentsFailure": 0,
+	"systemComponentAuthTimeout": 5000,
+	"mountAllBlockDevices": false
+}
+[2020-11-23T19:43:12.388Z][INFO]-===========================================
+[2020-11-23T19:43:12.391Z][DEBUG]-[3]Requested certificate load [file:///greengrass/certs/certificate.pem] with error: [<nil>]
+[2020-11-23T19:43:12.391Z][INFO]-The current core is using the AWS IoT certificates with fingerprint.	{"fingerprint": "cdf39df51b9292df6525094aa99b06bb960885e03081dba23c8f31bcd7088f35"}
+[2020-11-23T19:43:12.391Z][INFO]-Will persist worker process info.	{"dir": "/greengrass/ggc/packages/1.11.0/var/worker/processes"}
+[2020-11-23T19:43:12.392Z][INFO]-Will persist worker process info.	{"dir": "/greengrass/ggc/packages/1.11.0/var/worker/processes"}
+[2020-11-23T19:43:12.393Z][DEBUG]-loading subscriptions	{"trie": "map[]"}
+[2020-11-23T19:43:12.394Z][DEBUG]-Reloading function registry.
+[2020-11-23T19:43:12.395Z][INFO]-No proxy URL found.
+[2020-11-23T19:43:12.396Z][DEBUG]-[3]Requested certificate load [file:///greengrass/certs/certificate.pem] with error: [<nil>]
+[2020-11-23T19:43:12.396Z][INFO]-The current core is using the AWS IoT certificates with fingerprint.	{"fingerprint": "cdf39df51b9292df6525094aa99b06bb960885e03081dba23c8f31bcd7088f35"}
+[2020-11-23T19:43:12.4Z][DEBUG]-[3]Requested certificate load [file:///greengrass/certs/root.ca.pem] with error: [<nil>]
+[2020-11-23T19:43:12.404Z][DEBUG]-[3]Requested key load [file:///greengrass/certs/private.key] with error: [<nil>]
+[2020-11-23T19:43:12.406Z][DEBUG]-[3]Requested certificate load [file:///greengrass/certs/certificate.pem] with error: [<nil>]
+[2020-11-23T19:43:12.406Z][INFO]-No proxy URL found.
+[2020-11-23T19:43:12.407Z][INFO]-Connecting with MQTT.	{"endpoint": "a1weqdhxfcc06i-ats.iot.eu-central-1.amazonaws.com:8883", "clientId": "gg_battery_predict_Core"}
+[2020-11-23T19:43:12.407Z][DEBUG]-MQTT connection attempt.	{"attemptId": "oTeg", "clientId": "gg_battery_predict_Core"}
+[2020-11-23T19:43:12.407Z][DEBUG]-New MQTT connection attempt
+[2020-11-23T19:43:12.407Z][DEBUG]-Acquired lock for connection attempt
+[2020-11-23T19:43:12.407Z][DEBUG]-Disconnect client	{"force": false}
+[2020-11-23T19:43:12.571Z][DEBUG]-Connection request is valid
+[2020-11-23T19:43:12.571Z][DEBUG]-Finished connection attempt, waiting for OnConnect Handler
+[2020-11-23T19:43:12.571Z][DEBUG]-Releasing lock for connection attempt
+[2020-11-23T19:43:12.571Z][INFO]-MQTT connection successful.	{"attemptId": "oTeg", "clientId": "gg_battery_predict_Core"}
+[2020-11-23T19:43:12.571Z][INFO]-MQTT connection established.	{"endpoint": "a1weqdhxfcc06i-ats.iot.eu-central-1.amazonaws.com:8883", "clientId": "gg_battery_predict_Core"}
+[2020-11-23T19:43:12.571Z][DEBUG]-Handle new connection event
+[2020-11-23T19:43:12.571Z][DEBUG]-Acquired lock for new connection event
+[2020-11-23T19:43:12.571Z][DEBUG]-Update status to connected
+[2020-11-23T19:43:12.571Z][DEBUG]-Releasing lock for new connection event
+[2020-11-23T19:43:12.571Z][DEBUG]-Entering OnConnect.	{"clientId": "gg_battery_predict_Core", "count": 1}
+[2020-11-23T19:43:12.571Z][INFO]-MQTT connection connected. Start subscribing.	{"clientId": "gg_battery_predict_Core", "count": 1}
+[2020-11-23T19:43:12.571Z][INFO]-Daemon connected to cloud.
+[2020-11-23T19:43:12.571Z][DEBUG]-Subscribe retry configuration.	{"IntervalInSeconds": 60, "count": 1}
+[2020-11-23T19:43:12.572Z][INFO]-Start subscribing.	{"numOfTopics": 5, "clientId": "gg_battery_predict_Core"}
+[2020-11-23T19:43:12.572Z][INFO]-Trying to subscribe to topic $aws/things/gg_battery_predict_Core-gcf/shadow/update/delta
+[2020-11-23T19:43:12.572Z][DEBUG]-Subscribe	{"topic": "$aws/things/gg_battery_predict_Core-gcf/shadow/update/delta", "qos": 0}
+[2020-11-23T19:43:12.621Z][DEBUG]-Subscribed to topic.	{"topic": "$aws/things/gg_battery_predict_Core-gcf/shadow/update/delta"}
+[2020-11-23T19:43:12.621Z][INFO]-Trying to subscribe to topic $aws/things/gg_battery_predict_Core-gda/shadow/get/accepted
+[2020-11-23T19:43:12.621Z][DEBUG]-Subscribe	{"topic": "$aws/things/gg_battery_predict_Core-gda/shadow/get/accepted", "qos": 0}
+[2020-11-23T19:43:12.698Z][DEBUG]-Subscribed to topic.	{"topic": "$aws/things/gg_battery_predict_Core-gda/shadow/get/accepted"}
+[2020-11-23T19:43:12.698Z][DEBUG]-Publish	{"topic": "$aws/things/gg_battery_predict_Core-gda/shadow/get", "qos": 1}
+[2020-11-23T19:43:12.718Z][INFO]-Trying to subscribe to topic $aws/things/gg_battery_predict_Core-gda/shadow/update/delta
+[2020-11-23T19:43:12.718Z][DEBUG]-Subscribe	{"topic": "$aws/things/gg_battery_predict_Core-gda/shadow/update/delta", "qos": 0}
+[2020-11-23T19:43:12.779Z][DEBUG]-Subscribed to topic.	{"topic": "$aws/things/gg_battery_predict_Core-gda/shadow/update/delta"}
+[2020-11-23T19:43:12.779Z][INFO]-Trying to subscribe to topic $aws/things/gg_battery_predict_Core-gcf/shadow/get/rejected
+[2020-11-23T19:43:12.779Z][DEBUG]-Subscribe	{"topic": "$aws/things/gg_battery_predict_Core-gcf/shadow/get/rejected", "qos": 0}
+[2020-11-23T19:43:12.861Z][DEBUG]-Subscribed to topic.	{"topic": "$aws/things/gg_battery_predict_Core-gcf/shadow/get/rejected"}
+[2020-11-23T19:43:12.861Z][INFO]-Trying to subscribe to topic $aws/things/gg_battery_predict_Core-gcf/shadow/get/accepted
+[2020-11-23T19:43:12.861Z][DEBUG]-Subscribe	{"topic": "$aws/things/gg_battery_predict_Core-gcf/shadow/get/accepted", "qos": 0}
+[2020-11-23T19:43:12.906Z][DEBUG]-Subscribed to topic.	{"topic": "$aws/things/gg_battery_predict_Core-gcf/shadow/get/accepted"}
+[2020-11-23T19:43:12.906Z][DEBUG]-Publish	{"topic": "$aws/things/gg_battery_predict_Core-gcf/shadow/get", "qos": 1}
+[2020-11-23T19:43:12.925Z][INFO]-All topics subscribed.	{"clientId": "gg_battery_predict_Core"}
+[2020-11-23T19:43:12.94Z][INFO]-Updating with update request.	{"aggregationIntervalSeconds": 3600, "publishIntervalSeconds": 86400}
+[2020-11-23T19:43:12.94Z][INFO]-Config update is in pending state.	{"aggregationIntervalSeconds": 3600, "publishIntervalSeconds": 86400}
+[2020-11-23T19:43:12.94Z][INFO]-Start metrics config updating.	{"aggregationIntervalSeconds": 3600, "publishIntervalSeconds": 86400}
+[2020-11-23T19:43:12.94Z][INFO]-Metric config update succeeded.
+[2020-11-23T19:43:12.941Z][DEBUG]-Report config update to the topic	{"topic": "$aws/things/gg_battery_predict_Core-gcf/shadow/update", "data": "{\"state\":{\"reported\":{\"telemetryConfiguration\":{\"publishIntervalSeconds\":86400,\"aggregationIntervalSeconds\":3600}}}}"}
+[2020-11-23T19:43:12.941Z][DEBUG]-Publish	{"topic": "$aws/things/gg_battery_predict_Core-gcf/shadow/update", "qos": 1}
+[2020-11-23T19:43:12.941Z][INFO]-Received signal to terminate aggregation schedule
+[2020-11-23T19:43:12.941Z][INFO]-Received signal to terminate upload schedule
+[2020-11-23T19:43:12.962Z][INFO]-Update metric config reported to the cloud.
+[2020-11-23T19:44:34.45Z][INFO]-===========================================
+[2020-11-23T19:44:34.45Z][INFO]-Greengrass Version: 1.11.0-RC2
+[2020-11-23T19:44:34.45Z][INFO]-Greengrass Root: /greengrass
+[2020-11-23T19:44:34.45Z][INFO]-Greengrass Write Directory: /greengrass/ggc
+[2020-11-23T19:44:34.45Z][INFO]-Group File Directory: /greengrass/ggc/deployment/group
+[2020-11-23T19:44:34.451Z][INFO]-Default Lambda UID: 999
+[2020-11-23T19:44:34.451Z][INFO]-Default Lambda GID: 997
+[2020-11-23T19:44:34.451Z][DEBUG]-Go version: go1.12.11
+[2020-11-23T19:44:34.451Z][DEBUG]-CoreThing Connection Config: 
+{
+	"Region": "eu-central-1",
+	"ThingArn": "arn:aws:iot:eu-central-1:128199939578:thing/gg_battery_predict_Core",
+	"IoTMQTTEndpoint": "a1weqdhxfcc06i-ats.iot.eu-central-1.amazonaws.com:8883",
+	"IoTHTTPEndpoint": "a1weqdhxfcc06i-ats.iot.eu-central-1.amazonaws.com:8443",
+	"GGMQTTPort": 8883,
+	"GGHTTPEndpoint": "greengrass-ats.iot.eu-central-1.amazonaws.com:8443",
+	"GGDaemonPort": 8000,
+	"GGMQTTKeepAlive": 600,
+	"GGMQTTMaxConnectionRetryInterval": 60,
+	"GGMQTTConnectTimeout": 30,
+	"GGMQTTPingTimeout": 30,
+	"GGMQTTOperationTimeout": 5,
+	"GGHTTPTimeout": 60,
+	"FIPSMode": false,
+	"CoreClientId": ""
+}
+[2020-11-23T19:44:34.451Z][DEBUG]-System Config: 
+{
+	"tmpDirectory": "",
+	"shadowSyncTimeout": 0,
+	"useOverlayWithTmpfs": false,
+	"disablePivotRoot": false
+}
+[2020-11-23T19:44:34.451Z][DEBUG]-Runtime Config: 
+{
+	"maxWorkItemCount": 1024,
+	"schedulingFrequency": 1000,
+	"maxConcurrentLimit": 25,
+	"lruSize": 25,
+	"cgroup": {
+		"useSystemd": true,
+		"mountPoint": null
+	},
+	"postStartHealthCheckTimeout": 60000,
+	"allowFunctionsToRunAsRoot": true,
+	"onSystemComponentsFailure": 0,
+	"systemComponentAuthTimeout": 5000,
+	"mountAllBlockDevices": false
+}
+[2020-11-23T19:44:34.451Z][INFO]-===========================================
+[2020-11-23T19:44:34.454Z][DEBUG]-[3]Requested certificate load [file:///greengrass/certs/certificate.pem] with error: [<nil>]
+[2020-11-23T19:44:34.454Z][INFO]-The current core is using the AWS IoT certificates with fingerprint.	{"fingerprint": "cdf39df51b9292df6525094aa99b06bb960885e03081dba23c8f31bcd7088f35"}
+[2020-11-23T19:44:34.454Z][INFO]-Will persist worker process info.	{"dir": "/greengrass/ggc/packages/1.11.0/var/worker/processes"}
+[2020-11-23T19:44:34.454Z][INFO]-Will persist worker process info.	{"dir": "/greengrass/ggc/packages/1.11.0/var/worker/processes"}
+[2020-11-23T19:44:34.455Z][DEBUG]-loading subscriptions	{"trie": "map[]"}
+[2020-11-23T19:44:34.456Z][DEBUG]-Reloading function registry.
+[2020-11-23T19:44:34.456Z][INFO]-No proxy URL found.
+[2020-11-23T19:44:34.458Z][DEBUG]-[3]Requested certificate load [file:///greengrass/certs/certificate.pem] with error: [<nil>]
+[2020-11-23T19:44:34.458Z][INFO]-The current core is using the AWS IoT certificates with fingerprint.	{"fingerprint": "cdf39df51b9292df6525094aa99b06bb960885e03081dba23c8f31bcd7088f35"}
+[2020-11-23T19:44:34.46Z][DEBUG]-[3]Requested certificate load [file:///greengrass/certs/root.ca.pem] with error: [<nil>]
+[2020-11-23T19:44:34.465Z][DEBUG]-[3]Requested key load [file:///greengrass/certs/private.key] with error: [<nil>]
+[2020-11-23T19:44:34.467Z][DEBUG]-[3]Requested certificate load [file:///greengrass/certs/certificate.pem] with error: [<nil>]
+[2020-11-23T19:44:34.468Z][INFO]-No proxy URL found.
+[2020-11-23T19:44:34.469Z][INFO]-Connecting with MQTT.	{"endpoint": "a1weqdhxfcc06i-ats.iot.eu-central-1.amazonaws.com:8883", "clientId": "gg_battery_predict_Core"}
+[2020-11-23T19:44:34.469Z][DEBUG]-MQTT connection attempt.	{"attemptId": "YEUQ", "clientId": "gg_battery_predict_Core"}
+[2020-11-23T19:44:34.469Z][DEBUG]-New MQTT connection attempt
+[2020-11-23T19:44:34.469Z][DEBUG]-Acquired lock for connection attempt
+[2020-11-23T19:44:34.469Z][DEBUG]-Disconnect client	{"force": false}
+[2020-11-23T19:44:34.638Z][DEBUG]-Handle new connection event
+[2020-11-23T19:44:34.638Z][DEBUG]-Connection request is valid
+[2020-11-23T19:44:34.638Z][DEBUG]-Finished connection attempt, waiting for OnConnect Handler
+[2020-11-23T19:44:34.638Z][DEBUG]-Releasing lock for connection attempt
+[2020-11-23T19:44:34.638Z][INFO]-MQTT connection successful.	{"attemptId": "YEUQ", "clientId": "gg_battery_predict_Core"}
+[2020-11-23T19:44:34.638Z][INFO]-MQTT connection established.	{"endpoint": "a1weqdhxfcc06i-ats.iot.eu-central-1.amazonaws.com:8883", "clientId": "gg_battery_predict_Core"}
+[2020-11-23T19:44:34.639Z][DEBUG]-Acquired lock for new connection event
+[2020-11-23T19:44:34.639Z][DEBUG]-Update status to connected
+[2020-11-23T19:44:34.639Z][DEBUG]-Releasing lock for new connection event
+[2020-11-23T19:44:34.639Z][DEBUG]-Entering OnConnect.	{"clientId": "gg_battery_predict_Core", "count": 1}
+[2020-11-23T19:44:34.639Z][INFO]-MQTT connection connected. Start subscribing.	{"clientId": "gg_battery_predict_Core", "count": 1}
+[2020-11-23T19:44:34.639Z][INFO]-Daemon connected to cloud.
+[2020-11-23T19:44:34.639Z][DEBUG]-Subscribe retry configuration.	{"IntervalInSeconds": 60, "count": 1}
+[2020-11-23T19:44:34.639Z][INFO]-Start subscribing.	{"numOfTopics": 5, "clientId": "gg_battery_predict_Core"}
+[2020-11-23T19:44:34.639Z][INFO]-Trying to subscribe to topic $aws/things/gg_battery_predict_Core-gda/shadow/update/delta
+[2020-11-23T19:44:34.639Z][DEBUG]-Subscribe	{"topic": "$aws/things/gg_battery_predict_Core-gda/shadow/update/delta", "qos": 0}
+[2020-11-23T19:44:34.696Z][DEBUG]-Subscribed to topic.	{"topic": "$aws/things/gg_battery_predict_Core-gda/shadow/update/delta"}
+[2020-11-23T19:44:34.696Z][INFO]-Trying to subscribe to topic $aws/things/gg_battery_predict_Core-gcf/shadow/get/rejected
+[2020-11-23T19:44:34.696Z][DEBUG]-Subscribe	{"topic": "$aws/things/gg_battery_predict_Core-gcf/shadow/get/rejected", "qos": 0}
+[2020-11-23T19:44:34.746Z][DEBUG]-Subscribed to topic.	{"topic": "$aws/things/gg_battery_predict_Core-gcf/shadow/get/rejected"}
+[2020-11-23T19:44:34.746Z][INFO]-Trying to subscribe to topic $aws/things/gg_battery_predict_Core-gcf/shadow/get/accepted
+[2020-11-23T19:44:34.746Z][DEBUG]-Subscribe	{"topic": "$aws/things/gg_battery_predict_Core-gcf/shadow/get/accepted", "qos": 0}
+[2020-11-23T19:44:34.801Z][DEBUG]-Subscribed to topic.	{"topic": "$aws/things/gg_battery_predict_Core-gcf/shadow/get/accepted"}
+[2020-11-23T19:44:34.801Z][DEBUG]-Publish	{"topic": "$aws/things/gg_battery_predict_Core-gcf/shadow/get", "qos": 1}
+[2020-11-23T19:44:34.825Z][INFO]-Trying to subscribe to topic $aws/things/gg_battery_predict_Core-gcf/shadow/update/delta
+[2020-11-23T19:44:34.825Z][DEBUG]-Subscribe	{"topic": "$aws/things/gg_battery_predict_Core-gcf/shadow/update/delta", "qos": 0}
+[2020-11-23T19:44:34.838Z][INFO]-Updating with update request.	{"aggregationIntervalSeconds": 3600, "publishIntervalSeconds": 86400}
+[2020-11-23T19:44:34.838Z][INFO]-Config update is in pending state.	{"aggregationIntervalSeconds": 3600, "publishIntervalSeconds": 86400}
+[2020-11-23T19:44:34.838Z][INFO]-Start metrics config updating.	{"aggregationIntervalSeconds": 3600, "publishIntervalSeconds": 86400}
+[2020-11-23T19:44:34.838Z][INFO]-Metric config update succeeded.
+[2020-11-23T19:44:34.839Z][DEBUG]-Report config update to the topic	{"topic": "$aws/things/gg_battery_predict_Core-gcf/shadow/update", "data": "{\"state\":{\"reported\":{\"telemetryConfiguration\":{\"publishIntervalSeconds\":86400,\"aggregationIntervalSeconds\":3600}}}}"}
+[2020-11-23T19:44:34.839Z][DEBUG]-Publish	{"topic": "$aws/things/gg_battery_predict_Core-gcf/shadow/update", "qos": 1}
+[2020-11-23T19:44:34.839Z][INFO]-Received signal to terminate upload schedule
+[2020-11-23T19:44:34.839Z][INFO]-Received signal to terminate aggregation schedule
+[2020-11-23T19:44:34.859Z][INFO]-Update metric config reported to the cloud.
+[2020-11-23T19:44:34.877Z][DEBUG]-Subscribed to topic.	{"topic": "$aws/things/gg_battery_predict_Core-gcf/shadow/update/delta"}
+[2020-11-23T19:44:34.877Z][INFO]-Trying to subscribe to topic $aws/things/gg_battery_predict_Core-gda/shadow/get/accepted
+[2020-11-23T19:44:34.877Z][DEBUG]-Subscribe	{"topic": "$aws/things/gg_battery_predict_Core-gda/shadow/get/accepted", "qos": 0}
+[2020-11-23T19:44:34.925Z][DEBUG]-Subscribed to topic.	{"topic": "$aws/things/gg_battery_predict_Core-gda/shadow/get/accepted"}
+[2020-11-23T19:44:34.925Z][DEBUG]-Publish	{"topic": "$aws/things/gg_battery_predict_Core-gda/shadow/get", "qos": 1}
+[2020-11-23T19:44:34.946Z][INFO]-All topics subscribed.	{"clientId": "gg_battery_predict_Core"}
+[2020-11-23T19:47:01.259Z][INFO]-===========================================
+[2020-11-23T19:47:01.259Z][INFO]-Greengrass Version: 1.11.0-RC2
+[2020-11-23T19:47:01.259Z][INFO]-Greengrass Root: /greengrass
+[2020-11-23T19:47:01.259Z][INFO]-Greengrass Write Directory: /greengrass/ggc
+[2020-11-23T19:47:01.259Z][INFO]-Group File Directory: /greengrass/ggc/deployment/group
+[2020-11-23T19:47:01.259Z][INFO]-Default Lambda UID: 999
+[2020-11-23T19:47:01.259Z][INFO]-Default Lambda GID: 997
+[2020-11-23T19:47:01.259Z][DEBUG]-Go version: go1.12.11
+[2020-11-23T19:47:01.259Z][DEBUG]-CoreThing Connection Config: 
+{
+	"Region": "eu-central-1",
+	"ThingArn": "arn:aws:iot:eu-central-1:128199939578:thing/gg_battery_predict_Core",
+	"IoTMQTTEndpoint": "a1weqdhxfcc06i-ats.iot.eu-central-1.amazonaws.com:8883",
+	"IoTHTTPEndpoint": "a1weqdhxfcc06i-ats.iot.eu-central-1.amazonaws.com:8443",
+	"GGMQTTPort": 8883,
+	"GGHTTPEndpoint": "greengrass-ats.iot.eu-central-1.amazonaws.com:8443",
+	"GGDaemonPort": 8000,
+	"GGMQTTKeepAlive": 600,
+	"GGMQTTMaxConnectionRetryInterval": 60,
+	"GGMQTTConnectTimeout": 30,
+	"GGMQTTPingTimeout": 30,
+	"GGMQTTOperationTimeout": 5,
+	"GGHTTPTimeout": 60,
+	"FIPSMode": false,
+	"CoreClientId": ""
+}
+[2020-11-23T19:47:01.26Z][DEBUG]-System Config: 
+{
+	"tmpDirectory": "",
+	"shadowSyncTimeout": 0,
+	"useOverlayWithTmpfs": false,
+	"disablePivotRoot": false
+}
+[2020-11-23T19:47:01.26Z][DEBUG]-Runtime Config: 
+{
+	"maxWorkItemCount": 1024,
+	"schedulingFrequency": 1000,
+	"maxConcurrentLimit": 25,
+	"lruSize": 25,
+	"cgroup": {
+		"useSystemd": true,
+		"mountPoint": null
+	},
+	"postStartHealthCheckTimeout": 60000,
+	"allowFunctionsToRunAsRoot": true,
+	"onSystemComponentsFailure": 0,
+	"systemComponentAuthTimeout": 5000,
+	"mountAllBlockDevices": false
+}
+[2020-11-23T19:47:01.26Z][INFO]-===========================================
+[2020-11-23T19:47:01.262Z][DEBUG]-[3]Requested certificate load [file:///greengrass/certs/certificate.pem] with error: [<nil>]
+[2020-11-23T19:47:01.262Z][INFO]-The current core is using the AWS IoT certificates with fingerprint.	{"fingerprint": "cdf39df51b9292df6525094aa99b06bb960885e03081dba23c8f31bcd7088f35"}
+[2020-11-23T19:47:01.262Z][INFO]-Will persist worker process info.	{"dir": "/greengrass/ggc/packages/1.11.0/var/worker/processes"}
+[2020-11-23T19:47:01.263Z][INFO]-Will persist worker process info.	{"dir": "/greengrass/ggc/packages/1.11.0/var/worker/processes"}
+[2020-11-23T19:47:01.264Z][DEBUG]-loading subscriptions	{"trie": "map[]"}
+[2020-11-23T19:47:01.265Z][INFO]-No proxy URL found.
+[2020-11-23T19:47:01.265Z][DEBUG]-Reloading function registry.
+[2020-11-23T19:47:01.267Z][DEBUG]-[3]Requested certificate load [file:///greengrass/certs/certificate.pem] with error: [<nil>]
+[2020-11-23T19:47:01.267Z][INFO]-The current core is using the AWS IoT certificates with fingerprint.	{"fingerprint": "cdf39df51b9292df6525094aa99b06bb960885e03081dba23c8f31bcd7088f35"}
+[2020-11-23T19:47:01.269Z][DEBUG]-[3]Requested certificate load [file:///greengrass/certs/root.ca.pem] with error: [<nil>]
+[2020-11-23T19:47:01.273Z][DEBUG]-[3]Requested key load [file:///greengrass/certs/private.key] with error: [<nil>]
+[2020-11-23T19:47:01.275Z][DEBUG]-[3]Requested certificate load [file:///greengrass/certs/certificate.pem] with error: [<nil>]
+[2020-11-23T19:47:01.276Z][INFO]-No proxy URL found.
+[2020-11-23T19:47:01.279Z][INFO]-Connecting with MQTT.	{"endpoint": "a1weqdhxfcc06i-ats.iot.eu-central-1.amazonaws.com:8883", "clientId": "gg_battery_predict_Core"}
+[2020-11-23T19:47:01.279Z][DEBUG]-MQTT connection attempt.	{"attemptId": "RNLG", "clientId": "gg_battery_predict_Core"}
+[2020-11-23T19:47:01.279Z][DEBUG]-New MQTT connection attempt
+[2020-11-23T19:47:01.279Z][DEBUG]-Acquired lock for connection attempt
+[2020-11-23T19:47:01.279Z][DEBUG]-Disconnect client	{"force": false}
+[2020-11-23T19:47:01.486Z][DEBUG]-Handle new connection event
+[2020-11-23T19:47:01.487Z][DEBUG]-Connection request is valid
+[2020-11-23T19:47:01.487Z][DEBUG]-Finished connection attempt, waiting for OnConnect Handler
+[2020-11-23T19:47:01.487Z][DEBUG]-Releasing lock for connection attempt
+[2020-11-23T19:47:01.487Z][INFO]-MQTT connection successful.	{"attemptId": "RNLG", "clientId": "gg_battery_predict_Core"}
+[2020-11-23T19:47:01.488Z][INFO]-MQTT connection established.	{"endpoint": "a1weqdhxfcc06i-ats.iot.eu-central-1.amazonaws.com:8883", "clientId": "gg_battery_predict_Core"}
+[2020-11-23T19:47:01.488Z][DEBUG]-Acquired lock for new connection event
+[2020-11-23T19:47:01.488Z][DEBUG]-Update status to connected
+[2020-11-23T19:47:01.488Z][DEBUG]-Releasing lock for new connection event
+[2020-11-23T19:47:01.488Z][DEBUG]-Entering OnConnect.	{"clientId": "gg_battery_predict_Core", "count": 1}
+[2020-11-23T19:47:01.488Z][INFO]-MQTT connection connected. Start subscribing.	{"clientId": "gg_battery_predict_Core", "count": 1}
+[2020-11-23T19:47:01.488Z][INFO]-Daemon connected to cloud.
+[2020-11-23T19:47:01.488Z][DEBUG]-Subscribe retry configuration.	{"IntervalInSeconds": 60, "count": 1}
+[2020-11-23T19:47:01.488Z][INFO]-Start subscribing.	{"numOfTopics": 5, "clientId": "gg_battery_predict_Core"}
+[2020-11-23T19:47:01.488Z][INFO]-Trying to subscribe to topic $aws/things/gg_battery_predict_Core-gda/shadow/update/delta
+[2020-11-23T19:47:01.488Z][DEBUG]-Subscribe	{"topic": "$aws/things/gg_battery_predict_Core-gda/shadow/update/delta", "qos": 0}
+[2020-11-23T19:47:01.548Z][DEBUG]-Subscribed to topic.	{"topic": "$aws/things/gg_battery_predict_Core-gda/shadow/update/delta"}
+[2020-11-23T19:47:01.548Z][INFO]-Trying to subscribe to topic $aws/things/gg_battery_predict_Core-gcf/shadow/get/rejected
+[2020-11-23T19:47:01.549Z][DEBUG]-Subscribe	{"topic": "$aws/things/gg_battery_predict_Core-gcf/shadow/get/rejected", "qos": 0}
+[2020-11-23T19:47:01.618Z][DEBUG]-Subscribed to topic.	{"topic": "$aws/things/gg_battery_predict_Core-gcf/shadow/get/rejected"}
+[2020-11-23T19:47:01.618Z][INFO]-Trying to subscribe to topic $aws/things/gg_battery_predict_Core-gcf/shadow/get/accepted
+[2020-11-23T19:47:01.618Z][DEBUG]-Subscribe	{"topic": "$aws/things/gg_battery_predict_Core-gcf/shadow/get/accepted", "qos": 0}
+[2020-11-23T19:47:01.733Z][DEBUG]-Subscribed to topic.	{"topic": "$aws/things/gg_battery_predict_Core-gcf/shadow/get/accepted"}
+[2020-11-23T19:47:01.733Z][DEBUG]-Publish	{"topic": "$aws/things/gg_battery_predict_Core-gcf/shadow/get", "qos": 1}
+[2020-11-23T19:47:01.764Z][INFO]-Updating with update request.	{"aggregationIntervalSeconds": 3600, "publishIntervalSeconds": 86400}
+[2020-11-23T19:47:01.764Z][INFO]-Config update is in pending state.	{"aggregationIntervalSeconds": 3600, "publishIntervalSeconds": 86400}
+[2020-11-23T19:47:01.765Z][INFO]-Start metrics config updating.	{"aggregationIntervalSeconds": 3600, "publishIntervalSeconds": 86400}
+[2020-11-23T19:47:01.765Z][INFO]-Received signal to terminate upload schedule
+[2020-11-23T19:47:01.765Z][INFO]-Received signal to terminate aggregation schedule
+[2020-11-23T19:47:01.766Z][INFO]-Metric config update succeeded.
+[2020-11-23T19:47:01.766Z][DEBUG]-Report config update to the topic	{"topic": "$aws/things/gg_battery_predict_Core-gcf/shadow/update", "data": "{\"state\":{\"reported\":{\"telemetryConfiguration\":{\"publishIntervalSeconds\":86400,\"aggregationIntervalSeconds\":3600}}}}"}
+[2020-11-23T19:47:01.766Z][DEBUG]-Publish	{"topic": "$aws/things/gg_battery_predict_Core-gcf/shadow/update", "qos": 1}
+[2020-11-23T19:47:01.777Z][INFO]-Trying to subscribe to topic $aws/things/gg_battery_predict_Core-gcf/shadow/update/delta
+[2020-11-23T19:47:01.778Z][DEBUG]-Subscribe	{"topic": "$aws/things/gg_battery_predict_Core-gcf/shadow/update/delta", "qos": 0}
+[2020-11-23T19:47:01.792Z][INFO]-Update metric config reported to the cloud.
+[2020-11-23T19:47:01.837Z][DEBUG]-Subscribed to topic.	{"topic": "$aws/things/gg_battery_predict_Core-gcf/shadow/update/delta"}
+[2020-11-23T19:47:01.837Z][INFO]-Trying to subscribe to topic $aws/things/gg_battery_predict_Core-gda/shadow/get/accepted
+[2020-11-23T19:47:01.837Z][DEBUG]-Subscribe	{"topic": "$aws/things/gg_battery_predict_Core-gda/shadow/get/accepted", "qos": 0}
+[2020-11-23T19:47:01.892Z][DEBUG]-Subscribed to topic.	{"topic": "$aws/things/gg_battery_predict_Core-gda/shadow/get/accepted"}
+[2020-11-23T19:47:01.892Z][DEBUG]-Publish	{"topic": "$aws/things/gg_battery_predict_Core-gda/shadow/get", "qos": 1}
+[2020-11-23T19:47:01.917Z][INFO]-All topics subscribed.	{"clientId": "gg_battery_predict_Core"}

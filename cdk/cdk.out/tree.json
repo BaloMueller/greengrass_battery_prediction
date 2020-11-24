@@ -1,0 +1,1529 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree"
+      },
+      "gg-battery-predict": {
+        "id": "gg-battery-predict",
+        "path": "gg-battery-predict",
+        "children": {
+          "IotAnalyticsStack": {
+            "id": "IotAnalyticsStack",
+            "path": "gg-battery-predict/IotAnalyticsStack",
+            "children": {
+              "Channel": {
+                "id": "Channel",
+                "path": "gg-battery-predict/IotAnalyticsStack/Channel",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IoTAnalytics::Channel",
+                  "aws:cdk:cloudformation:props": {
+                    "channelName": "gg_battery_predict_sensordata"
+                  }
+                }
+              },
+              "Datastore": {
+                "id": "Datastore",
+                "path": "gg-battery-predict/IotAnalyticsStack/Datastore",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IoTAnalytics::Datastore",
+                  "aws:cdk:cloudformation:props": {
+                    "datastoreName": "gg_battery_predict_sensordata_datastore"
+                  }
+                }
+              },
+              "Pipeline": {
+                "id": "Pipeline",
+                "path": "gg-battery-predict/IotAnalyticsStack/Pipeline",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IoTAnalytics::Pipeline",
+                  "aws:cdk:cloudformation:props": {
+                    "pipelineActivities": [
+                      {
+                        "channel": {
+                          "name": "ChannelActivity",
+                          "channelName": "gg_battery_predict_sensordata",
+                          "next": "DatastoreActivity"
+                        },
+                        "datastore": {
+                          "name": "DatastoreActivity",
+                          "datastoreName": "gg_battery_predict_sensordata_datastore"
+                        }
+                      }
+                    ],
+                    "pipelineName": "gg_battery_predict_sensordata_pipeline"
+                  }
+                }
+              },
+              "SqlDataset": {
+                "id": "SqlDataset",
+                "path": "gg-battery-predict/IotAnalyticsStack/SqlDataset",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IoTAnalytics::Dataset",
+                  "aws:cdk:cloudformation:props": {
+                    "actions": [
+                      {
+                        "actionName": "SqlAction",
+                        "queryAction": {
+                          "sqlQuery": "select * from gg_battery_predict_sensordata_datastore where __dt >= current_date - interval '1' day and from_unixtime(timestamp) > now() - interval '15' minute"
+                        }
+                      }
+                    ],
+                    "datasetName": "gg_battery_predict_sensordata_dataset",
+                    "retentionPeriod": {
+                      "unlimited": false,
+                      "numberOfDays": 30
+                    },
+                    "triggers": [
+                      {
+                        "schedule": {
+                          "scheduleExpression": "cron(0/5 * * * ? *)"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "KinesisStream": {
+            "id": "KinesisStream",
+            "path": "gg-battery-predict/KinesisStream",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "gg-battery-predict/KinesisStream/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Kinesis::Stream",
+                  "aws:cdk:cloudformation:props": {
+                    "shardCount": 1,
+                    "name": "AggregateData",
+                    "retentionPeriodHours": 24,
+                    "streamEncryption": {
+                      "Fn::If": [
+                        "AwsCdkKinesisEncryptedStreamsUnsupportedRegions",
+                        {
+                          "Ref": "AWS::NoValue"
+                        },
+                        {
+                          "EncryptionType": "KMS",
+                          "KeyId": "alias/aws/kinesis"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "AwsCdkKinesisEncryptedStreamsUnsupportedRegions": {
+            "id": "AwsCdkKinesisEncryptedStreamsUnsupportedRegions",
+            "path": "gg-battery-predict/AwsCdkKinesisEncryptedStreamsUnsupportedRegions"
+          },
+          "CreateThingCertPolicyCustomResource": {
+            "id": "CreateThingCertPolicyCustomResource",
+            "path": "gg-battery-predict/CreateThingCertPolicyCustomResource",
+            "children": {
+              "Singleton": {
+                "id": "Singleton",
+                "path": "gg-battery-predict/CreateThingCertPolicyCustomResource/Singleton"
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "gg-battery-predict/CreateThingCertPolicyCustomResource/Resource",
+                "children": {
+                  "Default": {
+                    "id": "Default",
+                    "path": "gg-battery-predict/CreateThingCertPolicyCustomResource/Resource/Default"
+                  }
+                }
+              }
+            }
+          },
+          "SingletonLambda3f332eedc7735e3eba42f6331d6b0ab3": {
+            "id": "SingletonLambda3f332eedc7735e3eba42f6331d6b0ab3",
+            "path": "gg-battery-predict/SingletonLambda3f332eedc7735e3eba42f6331d6b0ab3",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "gg-battery-predict/SingletonLambda3f332eedc7735e3eba42f6331d6b0ab3/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "gg-battery-predict/SingletonLambda3f332eedc7735e3eba42f6331d6b0ab3/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "gg-battery-predict/SingletonLambda3f332eedc7735e3eba42f6331d6b0ab3/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "gg-battery-predict/SingletonLambda3f332eedc7735e3eba42f6331d6b0ab3/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "iot:*",
+                                  "Effect": "Allow",
+                                  "Resource": "*"
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "SingletonLambda3f332eedc7735e3eba42f6331d6b0ab3ServiceRoleDefaultPolicy44A44F5A",
+                            "roles": [
+                              {
+                                "Ref": "SingletonLambda3f332eedc7735e3eba42f6331d6b0ab3ServiceRole4EB1C900"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "Code": {
+                "id": "Code",
+                "path": "gg-battery-predict/SingletonLambda3f332eedc7735e3eba42f6331d6b0ab3/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "gg-battery-predict/SingletonLambda3f332eedc7735e3eba42f6331d6b0ab3/Code/Stage"
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "gg-battery-predict/SingletonLambda3f332eedc7735e3eba42f6331d6b0ab3/Code/AssetBucket"
+                  }
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "gg-battery-predict/SingletonLambda3f332eedc7735e3eba42f6331d6b0ab3/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Ref": "AssetParameters4b7e9b2c1a9e2979940ae3e73b8adfef74b70f7d95cad0b07531bc516af60b04S3Bucket9D5E68E9"
+                      },
+                      "s3Key": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            {
+                              "Fn::Select": [
+                                0,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParameters4b7e9b2c1a9e2979940ae3e73b8adfef74b70f7d95cad0b07531bc516af60b04S3VersionKeyF5111ACE"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "Fn::Select": [
+                                1,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParameters4b7e9b2c1a9e2979940ae3e73b8adfef74b70f7d95cad0b07531bc516af60b04S3VersionKeyF5111ACE"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        ]
+                      }
+                    },
+                    "handler": "index.main",
+                    "role": {
+                      "Fn::GetAtt": [
+                        "SingletonLambda3f332eedc7735e3eba42f6331d6b0ab3ServiceRole4EB1C900",
+                        "Arn"
+                      ]
+                    },
+                    "runtime": "python3.8",
+                    "functionName": "gg-battery-predict-CreateThingCertPolicyFunction",
+                    "timeout": 30
+                  }
+                }
+              }
+            }
+          },
+          "AssetParameters": {
+            "id": "AssetParameters",
+            "path": "gg-battery-predict/AssetParameters",
+            "children": {
+              "4b7e9b2c1a9e2979940ae3e73b8adfef74b70f7d95cad0b07531bc516af60b04": {
+                "id": "4b7e9b2c1a9e2979940ae3e73b8adfef74b70f7d95cad0b07531bc516af60b04",
+                "path": "gg-battery-predict/AssetParameters/4b7e9b2c1a9e2979940ae3e73b8adfef74b70f7d95cad0b07531bc516af60b04",
+                "children": {
+                  "S3Bucket": {
+                    "id": "S3Bucket",
+                    "path": "gg-battery-predict/AssetParameters/4b7e9b2c1a9e2979940ae3e73b8adfef74b70f7d95cad0b07531bc516af60b04/S3Bucket"
+                  },
+                  "S3VersionKey": {
+                    "id": "S3VersionKey",
+                    "path": "gg-battery-predict/AssetParameters/4b7e9b2c1a9e2979940ae3e73b8adfef74b70f7d95cad0b07531bc516af60b04/S3VersionKey"
+                  },
+                  "ArtifactHash": {
+                    "id": "ArtifactHash",
+                    "path": "gg-battery-predict/AssetParameters/4b7e9b2c1a9e2979940ae3e73b8adfef74b70f7d95cad0b07531bc516af60b04/ArtifactHash"
+                  }
+                }
+              },
+              "3d690113f22f8ae282350741b95af566073d4b4aea152f367b4d9fe17e9ced8e": {
+                "id": "3d690113f22f8ae282350741b95af566073d4b4aea152f367b4d9fe17e9ced8e",
+                "path": "gg-battery-predict/AssetParameters/3d690113f22f8ae282350741b95af566073d4b4aea152f367b4d9fe17e9ced8e",
+                "children": {
+                  "S3Bucket": {
+                    "id": "S3Bucket",
+                    "path": "gg-battery-predict/AssetParameters/3d690113f22f8ae282350741b95af566073d4b4aea152f367b4d9fe17e9ced8e/S3Bucket"
+                  },
+                  "S3VersionKey": {
+                    "id": "S3VersionKey",
+                    "path": "gg-battery-predict/AssetParameters/3d690113f22f8ae282350741b95af566073d4b4aea152f367b4d9fe17e9ced8e/S3VersionKey"
+                  },
+                  "ArtifactHash": {
+                    "id": "ArtifactHash",
+                    "path": "gg-battery-predict/AssetParameters/3d690113f22f8ae282350741b95af566073d4b4aea152f367b4d9fe17e9ced8e/ArtifactHash"
+                  }
+                }
+              },
+              "df1bc2ad542c1fc51dbd1b7d204f3d1199f217479d68afcb85aae0a37966b048": {
+                "id": "df1bc2ad542c1fc51dbd1b7d204f3d1199f217479d68afcb85aae0a37966b048",
+                "path": "gg-battery-predict/AssetParameters/df1bc2ad542c1fc51dbd1b7d204f3d1199f217479d68afcb85aae0a37966b048",
+                "children": {
+                  "S3Bucket": {
+                    "id": "S3Bucket",
+                    "path": "gg-battery-predict/AssetParameters/df1bc2ad542c1fc51dbd1b7d204f3d1199f217479d68afcb85aae0a37966b048/S3Bucket"
+                  },
+                  "S3VersionKey": {
+                    "id": "S3VersionKey",
+                    "path": "gg-battery-predict/AssetParameters/df1bc2ad542c1fc51dbd1b7d204f3d1199f217479d68afcb85aae0a37966b048/S3VersionKey"
+                  },
+                  "ArtifactHash": {
+                    "id": "ArtifactHash",
+                    "path": "gg-battery-predict/AssetParameters/df1bc2ad542c1fc51dbd1b7d204f3d1199f217479d68afcb85aae0a37966b048/ArtifactHash"
+                  }
+                }
+              },
+              "5a8dbcac5919f2c70ce85467237d6f7b3d4af9b99587efb62290cb8704bdba44": {
+                "id": "5a8dbcac5919f2c70ce85467237d6f7b3d4af9b99587efb62290cb8704bdba44",
+                "path": "gg-battery-predict/AssetParameters/5a8dbcac5919f2c70ce85467237d6f7b3d4af9b99587efb62290cb8704bdba44",
+                "children": {
+                  "S3Bucket": {
+                    "id": "S3Bucket",
+                    "path": "gg-battery-predict/AssetParameters/5a8dbcac5919f2c70ce85467237d6f7b3d4af9b99587efb62290cb8704bdba44/S3Bucket"
+                  },
+                  "S3VersionKey": {
+                    "id": "S3VersionKey",
+                    "path": "gg-battery-predict/AssetParameters/5a8dbcac5919f2c70ce85467237d6f7b3d4af9b99587efb62290cb8704bdba44/S3VersionKey"
+                  },
+                  "ArtifactHash": {
+                    "id": "ArtifactHash",
+                    "path": "gg-battery-predict/AssetParameters/5a8dbcac5919f2c70ce85467237d6f7b3d4af9b99587efb62290cb8704bdba44/ArtifactHash"
+                  }
+                }
+              },
+              "0f139e59b5f1410709a30484fb9a0b4d1deef9a4a3cc6a7d58e921cf3d53f53f": {
+                "id": "0f139e59b5f1410709a30484fb9a0b4d1deef9a4a3cc6a7d58e921cf3d53f53f",
+                "path": "gg-battery-predict/AssetParameters/0f139e59b5f1410709a30484fb9a0b4d1deef9a4a3cc6a7d58e921cf3d53f53f",
+                "children": {
+                  "S3Bucket": {
+                    "id": "S3Bucket",
+                    "path": "gg-battery-predict/AssetParameters/0f139e59b5f1410709a30484fb9a0b4d1deef9a4a3cc6a7d58e921cf3d53f53f/S3Bucket"
+                  },
+                  "S3VersionKey": {
+                    "id": "S3VersionKey",
+                    "path": "gg-battery-predict/AssetParameters/0f139e59b5f1410709a30484fb9a0b4d1deef9a4a3cc6a7d58e921cf3d53f53f/S3VersionKey"
+                  },
+                  "ArtifactHash": {
+                    "id": "ArtifactHash",
+                    "path": "gg-battery-predict/AssetParameters/0f139e59b5f1410709a30484fb9a0b4d1deef9a4a3cc6a7d58e921cf3d53f53f/ArtifactHash"
+                  }
+                }
+              },
+              "d67f58c5abf07c05f00f1ae6b28feb90df968f2075664b467e918b5ae77d351d": {
+                "id": "d67f58c5abf07c05f00f1ae6b28feb90df968f2075664b467e918b5ae77d351d",
+                "path": "gg-battery-predict/AssetParameters/d67f58c5abf07c05f00f1ae6b28feb90df968f2075664b467e918b5ae77d351d",
+                "children": {
+                  "S3Bucket": {
+                    "id": "S3Bucket",
+                    "path": "gg-battery-predict/AssetParameters/d67f58c5abf07c05f00f1ae6b28feb90df968f2075664b467e918b5ae77d351d/S3Bucket"
+                  },
+                  "S3VersionKey": {
+                    "id": "S3VersionKey",
+                    "path": "gg-battery-predict/AssetParameters/d67f58c5abf07c05f00f1ae6b28feb90df968f2075664b467e918b5ae77d351d/S3VersionKey"
+                  },
+                  "ArtifactHash": {
+                    "id": "ArtifactHash",
+                    "path": "gg-battery-predict/AssetParameters/d67f58c5abf07c05f00f1ae6b28feb90df968f2075664b467e918b5ae77d351d/ArtifactHash"
+                  }
+                }
+              }
+            }
+          },
+          "CertificatePEM": {
+            "id": "CertificatePEM",
+            "path": "gg-battery-predict/CertificatePEM"
+          },
+          "PrivateKeyPEM": {
+            "id": "PrivateKeyPEM",
+            "path": "gg-battery-predict/PrivateKeyPEM"
+          },
+          "ThingArn": {
+            "id": "ThingArn",
+            "path": "gg-battery-predict/ThingArn"
+          },
+          "EndpointDataAts": {
+            "id": "EndpointDataAts",
+            "path": "gg-battery-predict/EndpointDataAts"
+          },
+          "GreengrassRoleCustomResource": {
+            "id": "GreengrassRoleCustomResource",
+            "path": "gg-battery-predict/GreengrassRoleCustomResource",
+            "children": {
+              "Singleton": {
+                "id": "Singleton",
+                "path": "gg-battery-predict/GreengrassRoleCustomResource/Singleton"
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "gg-battery-predict/GreengrassRoleCustomResource/Resource",
+                "children": {
+                  "Default": {
+                    "id": "Default",
+                    "path": "gg-battery-predict/GreengrassRoleCustomResource/Resource/Default"
+                  }
+                }
+              }
+            }
+          },
+          "SingletonLambda41245b6ce6b355bc880586a38305b794": {
+            "id": "SingletonLambda41245b6ce6b355bc880586a38305b794",
+            "path": "gg-battery-predict/SingletonLambda41245b6ce6b355bc880586a38305b794",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "gg-battery-predict/SingletonLambda41245b6ce6b355bc880586a38305b794/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "gg-battery-predict/SingletonLambda41245b6ce6b355bc880586a38305b794/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "gg-battery-predict/SingletonLambda41245b6ce6b355bc880586a38305b794/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "gg-battery-predict/SingletonLambda41245b6ce6b355bc880586a38305b794/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "iam:CreateRole",
+                                    "iam:DeleteRole",
+                                    "iam:AttachRolePolicy",
+                                    "iam:PutRolePolicy",
+                                    "iam:ListRolePolicies",
+                                    "iam:DeleteRolePolicy",
+                                    "iam:ListAttachedRolePolicies",
+                                    "iam:DetachRolePolicy"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": "*"
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "SingletonLambda41245b6ce6b355bc880586a38305b794ServiceRoleDefaultPolicy6BBD5069",
+                            "roles": [
+                              {
+                                "Ref": "SingletonLambda41245b6ce6b355bc880586a38305b794ServiceRole032511C2"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "Code": {
+                "id": "Code",
+                "path": "gg-battery-predict/SingletonLambda41245b6ce6b355bc880586a38305b794/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "gg-battery-predict/SingletonLambda41245b6ce6b355bc880586a38305b794/Code/Stage"
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "gg-battery-predict/SingletonLambda41245b6ce6b355bc880586a38305b794/Code/AssetBucket"
+                  }
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "gg-battery-predict/SingletonLambda41245b6ce6b355bc880586a38305b794/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Ref": "AssetParameters3d690113f22f8ae282350741b95af566073d4b4aea152f367b4d9fe17e9ced8eS3Bucket584CFD40"
+                      },
+                      "s3Key": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            {
+                              "Fn::Select": [
+                                0,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParameters3d690113f22f8ae282350741b95af566073d4b4aea152f367b4d9fe17e9ced8eS3VersionKey65794BD9"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "Fn::Select": [
+                                1,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParameters3d690113f22f8ae282350741b95af566073d4b4aea152f367b4d9fe17e9ced8eS3VersionKey65794BD9"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        ]
+                      }
+                    },
+                    "handler": "index.main",
+                    "role": {
+                      "Fn::GetAtt": [
+                        "SingletonLambda41245b6ce6b355bc880586a38305b794ServiceRole032511C2",
+                        "Arn"
+                      ]
+                    },
+                    "runtime": "python3.8",
+                    "functionName": "gg-battery-predict-GreengrassRoleFunction",
+                    "timeout": 30
+                  }
+                }
+              }
+            }
+          },
+          "GreengrassLambdaSensorSource": {
+            "id": "GreengrassLambdaSensorSource",
+            "path": "gg-battery-predict/GreengrassLambdaSensorSource",
+            "children": {
+              "gg-battery-predict-SensorSource": {
+                "id": "gg-battery-predict-SensorSource",
+                "path": "gg-battery-predict/GreengrassLambdaSensorSource/gg-battery-predict-SensorSource",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "gg-battery-predict/GreengrassLambdaSensorSource/gg-battery-predict-SensorSource/ServiceRole",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "gg-battery-predict/GreengrassLambdaSensorSource/gg-battery-predict-SensorSource/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "lambda.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                  ]
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Code": {
+                    "id": "Code",
+                    "path": "gg-battery-predict/GreengrassLambdaSensorSource/gg-battery-predict-SensorSource/Code",
+                    "children": {
+                      "Stage": {
+                        "id": "Stage",
+                        "path": "gg-battery-predict/GreengrassLambdaSensorSource/gg-battery-predict-SensorSource/Code/Stage"
+                      },
+                      "AssetBucket": {
+                        "id": "AssetBucket",
+                        "path": "gg-battery-predict/GreengrassLambdaSensorSource/gg-battery-predict-SensorSource/Code/AssetBucket"
+                      }
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "gg-battery-predict/GreengrassLambdaSensorSource/gg-battery-predict-SensorSource/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "code": {
+                          "s3Bucket": {
+                            "Ref": "AssetParametersdf1bc2ad542c1fc51dbd1b7d204f3d1199f217479d68afcb85aae0a37966b048S3Bucket77A47E50"
+                          },
+                          "s3Key": {
+                            "Fn::Join": [
+                              "",
+                              [
+                                {
+                                  "Fn::Select": [
+                                    0,
+                                    {
+                                      "Fn::Split": [
+                                        "||",
+                                        {
+                                          "Ref": "AssetParametersdf1bc2ad542c1fc51dbd1b7d204f3d1199f217479d68afcb85aae0a37966b048S3VersionKey3A3A1F13"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "Fn::Select": [
+                                    1,
+                                    {
+                                      "Fn::Split": [
+                                        "||",
+                                        {
+                                          "Ref": "AssetParametersdf1bc2ad542c1fc51dbd1b7d204f3d1199f217479d68afcb85aae0a37966b048S3VersionKey3A3A1F13"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            ]
+                          }
+                        },
+                        "handler": "sensor_source.main",
+                        "role": {
+                          "Fn::GetAtt": [
+                            "GreengrassLambdaSensorSourceggbatterypredictSensorSourceServiceRoleF0628769",
+                            "Arn"
+                          ]
+                        },
+                        "runtime": "python3.7",
+                        "functionName": "gg-battery-predict-GreengrassLambda-SensorSource"
+                      }
+                    }
+                  },
+                  "VersionFunctionVersionPlaceholder": {
+                    "id": "VersionFunctionVersionPlaceholder",
+                    "path": "gg-battery-predict/GreengrassLambdaSensorSource/gg-battery-predict-SensorSource/VersionFunctionVersionPlaceholder",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "gg-battery-predict/GreengrassLambdaSensorSource/gg-battery-predict-SensorSource/VersionFunctionVersionPlaceholder/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::Lambda::Version",
+                          "aws:cdk:cloudformation:props": {
+                            "functionName": {
+                              "Ref": "GreengrassLambdaSensorSourceggbatterypredictSensorSourceE60E3BA9"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "gg-battery-predict-GreengrassSampleAlias": {
+                "id": "gg-battery-predict-GreengrassSampleAlias",
+                "path": "gg-battery-predict/GreengrassLambdaSensorSource/gg-battery-predict-GreengrassSampleAlias",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "gg-battery-predict/GreengrassLambdaSensorSource/gg-battery-predict-GreengrassSampleAlias/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Alias",
+                      "aws:cdk:cloudformation:props": {
+                        "functionName": {
+                          "Ref": "GreengrassLambdaSensorSourceggbatterypredictSensorSourceE60E3BA9"
+                        },
+                        "functionVersion": {
+                          "Fn::GetAtt": [
+                            "GreengrassLambdaSensorSourceggbatterypredictSensorSourceVersionFunctionVersionPlaceholder748610F9",
+                            "Version"
+                          ]
+                        },
+                        "name": "PROD"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "GreengrassLambdaStreamProducer": {
+            "id": "GreengrassLambdaStreamProducer",
+            "path": "gg-battery-predict/GreengrassLambdaStreamProducer",
+            "children": {
+              "gg-battery-predict-StreamProducer": {
+                "id": "gg-battery-predict-StreamProducer",
+                "path": "gg-battery-predict/GreengrassLambdaStreamProducer/gg-battery-predict-StreamProducer",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "gg-battery-predict/GreengrassLambdaStreamProducer/gg-battery-predict-StreamProducer/ServiceRole",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "gg-battery-predict/GreengrassLambdaStreamProducer/gg-battery-predict-StreamProducer/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "lambda.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                  ]
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Code": {
+                    "id": "Code",
+                    "path": "gg-battery-predict/GreengrassLambdaStreamProducer/gg-battery-predict-StreamProducer/Code",
+                    "children": {
+                      "Stage": {
+                        "id": "Stage",
+                        "path": "gg-battery-predict/GreengrassLambdaStreamProducer/gg-battery-predict-StreamProducer/Code/Stage"
+                      },
+                      "AssetBucket": {
+                        "id": "AssetBucket",
+                        "path": "gg-battery-predict/GreengrassLambdaStreamProducer/gg-battery-predict-StreamProducer/Code/AssetBucket"
+                      }
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "gg-battery-predict/GreengrassLambdaStreamProducer/gg-battery-predict-StreamProducer/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "code": {
+                          "s3Bucket": {
+                            "Ref": "AssetParameters5a8dbcac5919f2c70ce85467237d6f7b3d4af9b99587efb62290cb8704bdba44S3Bucket1C66E62E"
+                          },
+                          "s3Key": {
+                            "Fn::Join": [
+                              "",
+                              [
+                                {
+                                  "Fn::Select": [
+                                    0,
+                                    {
+                                      "Fn::Split": [
+                                        "||",
+                                        {
+                                          "Ref": "AssetParameters5a8dbcac5919f2c70ce85467237d6f7b3d4af9b99587efb62290cb8704bdba44S3VersionKey5AF3969D"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "Fn::Select": [
+                                    1,
+                                    {
+                                      "Fn::Split": [
+                                        "||",
+                                        {
+                                          "Ref": "AssetParameters5a8dbcac5919f2c70ce85467237d6f7b3d4af9b99587efb62290cb8704bdba44S3VersionKey5AF3969D"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            ]
+                          }
+                        },
+                        "handler": "stream_producer.main",
+                        "role": {
+                          "Fn::GetAtt": [
+                            "GreengrassLambdaStreamProducerggbatterypredictStreamProducerServiceRole5B2CD846",
+                            "Arn"
+                          ]
+                        },
+                        "runtime": "python3.7",
+                        "functionName": "gg-battery-predict-GreengrassLambda-StreamProducer"
+                      }
+                    }
+                  },
+                  "VersionFunctionVersionPlaceholder": {
+                    "id": "VersionFunctionVersionPlaceholder",
+                    "path": "gg-battery-predict/GreengrassLambdaStreamProducer/gg-battery-predict-StreamProducer/VersionFunctionVersionPlaceholder",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "gg-battery-predict/GreengrassLambdaStreamProducer/gg-battery-predict-StreamProducer/VersionFunctionVersionPlaceholder/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::Lambda::Version",
+                          "aws:cdk:cloudformation:props": {
+                            "functionName": {
+                              "Ref": "GreengrassLambdaStreamProducerggbatterypredictStreamProducerF1640B27"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "gg-battery-predict-GreengrassSampleAlias": {
+                "id": "gg-battery-predict-GreengrassSampleAlias",
+                "path": "gg-battery-predict/GreengrassLambdaStreamProducer/gg-battery-predict-GreengrassSampleAlias",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "gg-battery-predict/GreengrassLambdaStreamProducer/gg-battery-predict-GreengrassSampleAlias/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Alias",
+                      "aws:cdk:cloudformation:props": {
+                        "functionName": {
+                          "Ref": "GreengrassLambdaStreamProducerggbatterypredictStreamProducerF1640B27"
+                        },
+                        "functionVersion": {
+                          "Fn::GetAtt": [
+                            "GreengrassLambdaStreamProducerggbatterypredictStreamProducerVersionFunctionVersionPlaceholderF7596C5D",
+                            "Version"
+                          ]
+                        },
+                        "name": "PROD"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "GreengrassLambdaStreamAggregator": {
+            "id": "GreengrassLambdaStreamAggregator",
+            "path": "gg-battery-predict/GreengrassLambdaStreamAggregator",
+            "children": {
+              "gg-battery-predict-StreamAggregator": {
+                "id": "gg-battery-predict-StreamAggregator",
+                "path": "gg-battery-predict/GreengrassLambdaStreamAggregator/gg-battery-predict-StreamAggregator",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "gg-battery-predict/GreengrassLambdaStreamAggregator/gg-battery-predict-StreamAggregator/ServiceRole",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "gg-battery-predict/GreengrassLambdaStreamAggregator/gg-battery-predict-StreamAggregator/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "lambda.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                  ]
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Code": {
+                    "id": "Code",
+                    "path": "gg-battery-predict/GreengrassLambdaStreamAggregator/gg-battery-predict-StreamAggregator/Code",
+                    "children": {
+                      "Stage": {
+                        "id": "Stage",
+                        "path": "gg-battery-predict/GreengrassLambdaStreamAggregator/gg-battery-predict-StreamAggregator/Code/Stage"
+                      },
+                      "AssetBucket": {
+                        "id": "AssetBucket",
+                        "path": "gg-battery-predict/GreengrassLambdaStreamAggregator/gg-battery-predict-StreamAggregator/Code/AssetBucket"
+                      }
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "gg-battery-predict/GreengrassLambdaStreamAggregator/gg-battery-predict-StreamAggregator/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "code": {
+                          "s3Bucket": {
+                            "Ref": "AssetParameters0f139e59b5f1410709a30484fb9a0b4d1deef9a4a3cc6a7d58e921cf3d53f53fS3BucketB2B94C6A"
+                          },
+                          "s3Key": {
+                            "Fn::Join": [
+                              "",
+                              [
+                                {
+                                  "Fn::Select": [
+                                    0,
+                                    {
+                                      "Fn::Split": [
+                                        "||",
+                                        {
+                                          "Ref": "AssetParameters0f139e59b5f1410709a30484fb9a0b4d1deef9a4a3cc6a7d58e921cf3d53f53fS3VersionKeyB45F8B1F"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "Fn::Select": [
+                                    1,
+                                    {
+                                      "Fn::Split": [
+                                        "||",
+                                        {
+                                          "Ref": "AssetParameters0f139e59b5f1410709a30484fb9a0b4d1deef9a4a3cc6a7d58e921cf3d53f53fS3VersionKeyB45F8B1F"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            ]
+                          }
+                        },
+                        "handler": "stream_aggregator.main",
+                        "role": {
+                          "Fn::GetAtt": [
+                            "GreengrassLambdaStreamAggregatorggbatterypredictStreamAggregatorServiceRole8FF79930",
+                            "Arn"
+                          ]
+                        },
+                        "runtime": "python3.7",
+                        "functionName": "gg-battery-predict-GreengrassLambda-StreamAggregator"
+                      }
+                    }
+                  },
+                  "VersionFunctionVersionPlaceholder": {
+                    "id": "VersionFunctionVersionPlaceholder",
+                    "path": "gg-battery-predict/GreengrassLambdaStreamAggregator/gg-battery-predict-StreamAggregator/VersionFunctionVersionPlaceholder",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "gg-battery-predict/GreengrassLambdaStreamAggregator/gg-battery-predict-StreamAggregator/VersionFunctionVersionPlaceholder/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::Lambda::Version",
+                          "aws:cdk:cloudformation:props": {
+                            "functionName": {
+                              "Ref": "GreengrassLambdaStreamAggregatorggbatterypredictStreamAggregator53B55060"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "gg-battery-predict-GreengrassSampleAlias": {
+                "id": "gg-battery-predict-GreengrassSampleAlias",
+                "path": "gg-battery-predict/GreengrassLambdaStreamAggregator/gg-battery-predict-GreengrassSampleAlias",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "gg-battery-predict/GreengrassLambdaStreamAggregator/gg-battery-predict-GreengrassSampleAlias/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Alias",
+                      "aws:cdk:cloudformation:props": {
+                        "functionName": {
+                          "Ref": "GreengrassLambdaStreamAggregatorggbatterypredictStreamAggregator53B55060"
+                        },
+                        "functionVersion": {
+                          "Fn::GetAtt": [
+                            "GreengrassLambdaStreamAggregatorggbatterypredictStreamAggregatorVersionFunctionVersionPlaceholder435DE94E",
+                            "Version"
+                          ]
+                        },
+                        "name": "PROD"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "CoreDefinition": {
+            "id": "CoreDefinition",
+            "path": "gg-battery-predict/CoreDefinition",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::Greengrass::CoreDefinition",
+              "aws:cdk:cloudformation:props": {
+                "name": "StreamCore",
+                "initialVersion": {
+                  "cores": [
+                    {
+                      "certificateArn": {
+                        "Fn::GetAtt": [
+                          "CreateThingCertPolicyCustomResourceFE72F68F",
+                          "certificateArn"
+                        ]
+                      },
+                      "id": "1",
+                      "thingArn": {
+                        "Fn::GetAtt": [
+                          "CreateThingCertPolicyCustomResourceFE72F68F",
+                          "thingArn"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "FunctionDefinition": {
+            "id": "FunctionDefinition",
+            "path": "gg-battery-predict/FunctionDefinition",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::Greengrass::FunctionDefinition",
+              "aws:cdk:cloudformation:props": {
+                "name": "GreengrassFunction"
+              }
+            }
+          },
+          "FunctionDefinitionVersion": {
+            "id": "FunctionDefinitionVersion",
+            "path": "gg-battery-predict/FunctionDefinitionVersion",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::Greengrass::FunctionDefinitionVersion",
+              "aws:cdk:cloudformation:props": {
+                "functionDefinitionId": {
+                  "Fn::GetAtt": [
+                    "FunctionDefinition",
+                    "Id"
+                  ]
+                },
+                "functions": [
+                  {
+                    "id": "1",
+                    "functionArn": "arn:aws:lambda:::function:GGStreamManager:1",
+                    "functionConfiguration": {
+                      "encodingType": "binary",
+                      "pinned": true,
+                      "timeout": 3
+                    }
+                  },
+                  {
+                    "id": "2",
+                    "functionArn": {
+                      "Ref": "GreengrassLambdaSensorSourceggbatterypredictGreengrassSampleAlias18C3FBA2"
+                    },
+                    "functionConfiguration": {
+                      "encodingType": "binary",
+                      "pinned": true,
+                      "timeout": 3,
+                      "environment": {}
+                    }
+                  },
+                  {
+                    "id": "3",
+                    "functionArn": {
+                      "Ref": "GreengrassLambdaStreamProducerggbatterypredictGreengrassSampleAlias0004DB03"
+                    },
+                    "functionConfiguration": {
+                      "encodingType": "binary",
+                      "timeout": 3,
+                      "environment": {
+                        "variables": {
+                          "STREAM_MANAGER_CHANNEL": "gg_battery_predict_sensordata"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "id": "4",
+                    "functionArn": {
+                      "Ref": "GreengrassLambdaStreamAggregatorggbatterypredictGreengrassSampleAlias664B75B2"
+                    },
+                    "functionConfiguration": {
+                      "encodingType": "binary",
+                      "timeout": 3,
+                      "pinned": true,
+                      "environment": {
+                        "variables": {
+                          "LOCAL_DATA_STREAM": "LocalDataStream",
+                          "KINESIS_DATA_STREAM": {
+                            "Ref": "KinesisStream46752A3E"
+                          }
+                        }
+                      }
+                    }
+                  }
+                ],
+                "defaultConfig": {
+                  "execution": {
+                    "isolationMode": "NoContainer"
+                  }
+                }
+              }
+            }
+          },
+          "ConnectorDefinition": {
+            "id": "ConnectorDefinition",
+            "path": "gg-battery-predict/ConnectorDefinition",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::Greengrass::ConnectorDefinition",
+              "aws:cdk:cloudformation:props": {
+                "name": "ConnectorDefinition",
+                "initialVersion": {
+                  "connectors": []
+                }
+              }
+            }
+          },
+          "SubscriptionDefinition": {
+            "id": "SubscriptionDefinition",
+            "path": "gg-battery-predict/SubscriptionDefinition",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::Greengrass::SubscriptionDefinition",
+              "aws:cdk:cloudformation:props": {
+                "name": "SubscriptionsDefinition",
+                "initialVersion": {
+                  "subscriptions": [
+                    {
+                      "id": "1",
+                      "source": {
+                        "Ref": "GreengrassLambdaSensorSourceggbatterypredictGreengrassSampleAlias18C3FBA2"
+                      },
+                      "subject": "sensor_data",
+                      "target": {
+                        "Ref": "GreengrassLambdaStreamProducerggbatterypredictGreengrassSampleAlias0004DB03"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "LoggerDefinition": {
+            "id": "LoggerDefinition",
+            "path": "gg-battery-predict/LoggerDefinition",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::Greengrass::LoggerDefinition",
+              "aws:cdk:cloudformation:props": {
+                "name": "LoggerDefinition",
+                "initialVersion": {
+                  "loggers": [
+                    {
+                      "id": "1",
+                      "component": "GreengrassSystem",
+                      "level": "INFO",
+                      "type": "FileSystem",
+                      "space": 1024
+                    },
+                    {
+                      "id": "2",
+                      "component": "Lambda",
+                      "level": "INFO",
+                      "type": "FileSystem",
+                      "space": 1024
+                    },
+                    {
+                      "id": "3",
+                      "component": "GreengrassSystem",
+                      "level": "WARN",
+                      "type": "AWSCloudWatch"
+                    },
+                    {
+                      "id": "4",
+                      "component": "Lambda",
+                      "level": "WARN",
+                      "type": "AWSCloudWatch"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "GreengrassGroup3": {
+            "id": "GreengrassGroup3",
+            "path": "gg-battery-predict/GreengrassGroup3",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::Greengrass::Group",
+              "aws:cdk:cloudformation:props": {
+                "name": "gg_battery_predict3",
+                "roleArn": {
+                  "Fn::GetAtt": [
+                    "GreengrassRoleCustomResource21FB6A40",
+                    "roleArn"
+                  ]
+                }
+              }
+            }
+          },
+          "GreengrassGroupVersion": {
+            "id": "GreengrassGroupVersion",
+            "path": "gg-battery-predict/GreengrassGroupVersion",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::Greengrass::GroupVersion",
+              "aws:cdk:cloudformation:props": {
+                "groupId": {
+                  "Ref": "GreengrassGroup3"
+                },
+                "connectorDefinitionVersionArn": {
+                  "Fn::GetAtt": [
+                    "ConnectorDefinition",
+                    "LatestVersionArn"
+                  ]
+                },
+                "coreDefinitionVersionArn": {
+                  "Fn::GetAtt": [
+                    "CoreDefinition",
+                    "LatestVersionArn"
+                  ]
+                },
+                "functionDefinitionVersionArn": {
+                  "Fn::GetAtt": [
+                    "FunctionDefinition",
+                    "LatestVersionArn"
+                  ]
+                },
+                "loggerDefinitionVersionArn": {
+                  "Fn::GetAtt": [
+                    "LoggerDefinition",
+                    "LatestVersionArn"
+                  ]
+                },
+                "subscriptionDefinitionVersionArn": {
+                  "Fn::GetAtt": [
+                    "SubscriptionDefinition",
+                    "LatestVersionArn"
+                  ]
+                }
+              }
+            }
+          },
+          "GreengrassManageDeploymentsResource": {
+            "id": "GreengrassManageDeploymentsResource",
+            "path": "gg-battery-predict/GreengrassManageDeploymentsResource",
+            "children": {
+              "Singleton": {
+                "id": "Singleton",
+                "path": "gg-battery-predict/GreengrassManageDeploymentsResource/Singleton"
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "gg-battery-predict/GreengrassManageDeploymentsResource/Resource",
+                "children": {
+                  "Default": {
+                    "id": "Default",
+                    "path": "gg-battery-predict/GreengrassManageDeploymentsResource/Resource/Default"
+                  }
+                }
+              }
+            }
+          },
+          "SingletonLambdae44f06b61f0b58adacd64b38dc0e9d4f": {
+            "id": "SingletonLambdae44f06b61f0b58adacd64b38dc0e9d4f",
+            "path": "gg-battery-predict/SingletonLambdae44f06b61f0b58adacd64b38dc0e9d4f",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "gg-battery-predict/SingletonLambdae44f06b61f0b58adacd64b38dc0e9d4f/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "gg-battery-predict/SingletonLambdae44f06b61f0b58adacd64b38dc0e9d4f/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "gg-battery-predict/SingletonLambdae44f06b61f0b58adacd64b38dc0e9d4f/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "gg-battery-predict/SingletonLambdae44f06b61f0b58adacd64b38dc0e9d4f/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "greengrass:*",
+                                    "iot:*"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": "*"
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "SingletonLambdae44f06b61f0b58adacd64b38dc0e9d4fServiceRoleDefaultPolicy536B21E2",
+                            "roles": [
+                              {
+                                "Ref": "SingletonLambdae44f06b61f0b58adacd64b38dc0e9d4fServiceRole4E078A2B"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "Code": {
+                "id": "Code",
+                "path": "gg-battery-predict/SingletonLambdae44f06b61f0b58adacd64b38dc0e9d4f/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "gg-battery-predict/SingletonLambdae44f06b61f0b58adacd64b38dc0e9d4f/Code/Stage"
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "gg-battery-predict/SingletonLambdae44f06b61f0b58adacd64b38dc0e9d4f/Code/AssetBucket"
+                  }
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "gg-battery-predict/SingletonLambdae44f06b61f0b58adacd64b38dc0e9d4f/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Ref": "AssetParametersd67f58c5abf07c05f00f1ae6b28feb90df968f2075664b467e918b5ae77d351dS3BucketEC2889FD"
+                      },
+                      "s3Key": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            {
+                              "Fn::Select": [
+                                0,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParametersd67f58c5abf07c05f00f1ae6b28feb90df968f2075664b467e918b5ae77d351dS3VersionKey6BB031F0"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "Fn::Select": [
+                                1,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParametersd67f58c5abf07c05f00f1ae6b28feb90df968f2075664b467e918b5ae77d351dS3VersionKey6BB031F0"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        ]
+                      }
+                    },
+                    "handler": "index.main",
+                    "role": {
+                      "Fn::GetAtt": [
+                        "SingletonLambdae44f06b61f0b58adacd64b38dc0e9d4fServiceRole4E078A2B",
+                        "Arn"
+                      ]
+                    },
+                    "runtime": "python3.8",
+                    "functionName": "gg-battery-predict-GreengrassManageDeploymentsFunction",
+                    "timeout": 30
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

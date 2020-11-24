@@ -1,0 +1,1605 @@
+{
+  "version": "5.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "gg-battery-predict": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "gg-battery-predict.template.json"
+      },
+      "metadata": {
+        "/gg-battery-predict": [
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.4b7e9b2c1a9e2979940ae3e73b8adfef74b70f7d95cad0b07531bc516af60b04",
+              "id": "4b7e9b2c1a9e2979940ae3e73b8adfef74b70f7d95cad0b07531bc516af60b04",
+              "packaging": "zip",
+              "sourceHash": "4b7e9b2c1a9e2979940ae3e73b8adfef74b70f7d95cad0b07531bc516af60b04",
+              "s3BucketParameter": "AssetParameters4b7e9b2c1a9e2979940ae3e73b8adfef74b70f7d95cad0b07531bc516af60b04S3Bucket9D5E68E9",
+              "s3KeyParameter": "AssetParameters4b7e9b2c1a9e2979940ae3e73b8adfef74b70f7d95cad0b07531bc516af60b04S3VersionKeyF5111ACE",
+              "artifactHashParameter": "AssetParameters4b7e9b2c1a9e2979940ae3e73b8adfef74b70f7d95cad0b07531bc516af60b04ArtifactHashA3127768"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/construct-compat.js:310:62)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:130:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:58:25)",
+              "GreengrassStreamManagerStack.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack.js:353:33)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:62:31)",
+              "new Asset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:36:44)",
+              "AssetCode.bind (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/code.js:137:26)",
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:80:33)",
+              "SingletonFunction.ensureLambda (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:59:16)",
+              "new SingletonFunction (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:20:36)",
+              "new CustomResourceIoTThingCertPolicy (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/cr-create-iot-thing-cert-policy/cr-iot-thing-cert-policy.js:15:61)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:60:31)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          },
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.3d690113f22f8ae282350741b95af566073d4b4aea152f367b4d9fe17e9ced8e",
+              "id": "3d690113f22f8ae282350741b95af566073d4b4aea152f367b4d9fe17e9ced8e",
+              "packaging": "zip",
+              "sourceHash": "3d690113f22f8ae282350741b95af566073d4b4aea152f367b4d9fe17e9ced8e",
+              "s3BucketParameter": "AssetParameters3d690113f22f8ae282350741b95af566073d4b4aea152f367b4d9fe17e9ced8eS3Bucket584CFD40",
+              "s3KeyParameter": "AssetParameters3d690113f22f8ae282350741b95af566073d4b4aea152f367b4d9fe17e9ced8eS3VersionKey65794BD9",
+              "artifactHashParameter": "AssetParameters3d690113f22f8ae282350741b95af566073d4b4aea152f367b4d9fe17e9ced8eArtifactHash9C6BEC06"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/construct-compat.js:310:62)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:130:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:58:25)",
+              "GreengrassStreamManagerStack.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack.js:353:33)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:62:31)",
+              "new Asset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:36:44)",
+              "AssetCode.bind (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/code.js:137:26)",
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:80:33)",
+              "SingletonFunction.ensureLambda (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:59:16)",
+              "new SingletonFunction (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:20:36)",
+              "new CustomResourceGreengrassServiceRole (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/cr-greengrass-service-role/cr-greengrass-service-role.js:15:61)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:81:31)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          },
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.df1bc2ad542c1fc51dbd1b7d204f3d1199f217479d68afcb85aae0a37966b048",
+              "id": "df1bc2ad542c1fc51dbd1b7d204f3d1199f217479d68afcb85aae0a37966b048",
+              "packaging": "zip",
+              "sourceHash": "df1bc2ad542c1fc51dbd1b7d204f3d1199f217479d68afcb85aae0a37966b048",
+              "s3BucketParameter": "AssetParametersdf1bc2ad542c1fc51dbd1b7d204f3d1199f217479d68afcb85aae0a37966b048S3Bucket77A47E50",
+              "s3KeyParameter": "AssetParametersdf1bc2ad542c1fc51dbd1b7d204f3d1199f217479d68afcb85aae0a37966b048S3VersionKey3A3A1F13",
+              "artifactHashParameter": "AssetParametersdf1bc2ad542c1fc51dbd1b7d204f3d1199f217479d68afcb85aae0a37966b048ArtifactHash108B5C70"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/construct-compat.js:310:62)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:130:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:58:25)",
+              "GreengrassStreamManagerStack.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack.js:353:33)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:62:31)",
+              "new Asset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:36:44)",
+              "AssetCode.bind (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/code.js:137:26)",
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:80:33)",
+              "new GreengrassLambdaSensorSource (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/lambda-gg-sensor-source/lambda-gg-sensor-source.js:9:34)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:127:38)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          },
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.5a8dbcac5919f2c70ce85467237d6f7b3d4af9b99587efb62290cb8704bdba44",
+              "id": "5a8dbcac5919f2c70ce85467237d6f7b3d4af9b99587efb62290cb8704bdba44",
+              "packaging": "zip",
+              "sourceHash": "5a8dbcac5919f2c70ce85467237d6f7b3d4af9b99587efb62290cb8704bdba44",
+              "s3BucketParameter": "AssetParameters5a8dbcac5919f2c70ce85467237d6f7b3d4af9b99587efb62290cb8704bdba44S3Bucket1C66E62E",
+              "s3KeyParameter": "AssetParameters5a8dbcac5919f2c70ce85467237d6f7b3d4af9b99587efb62290cb8704bdba44S3VersionKey5AF3969D",
+              "artifactHashParameter": "AssetParameters5a8dbcac5919f2c70ce85467237d6f7b3d4af9b99587efb62290cb8704bdba44ArtifactHashA22B2F8E"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/construct-compat.js:310:62)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:130:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:58:25)",
+              "GreengrassStreamManagerStack.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack.js:353:33)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:62:31)",
+              "new Asset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:36:44)",
+              "AssetCode.bind (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/code.js:137:26)",
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:80:33)",
+              "new GreengrassLambdaStreamProducer (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/lambda-gg-stream-producer/lambda-gg-stream-producer.js:9:34)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:131:40)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          },
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.0f139e59b5f1410709a30484fb9a0b4d1deef9a4a3cc6a7d58e921cf3d53f53f",
+              "id": "0f139e59b5f1410709a30484fb9a0b4d1deef9a4a3cc6a7d58e921cf3d53f53f",
+              "packaging": "zip",
+              "sourceHash": "0f139e59b5f1410709a30484fb9a0b4d1deef9a4a3cc6a7d58e921cf3d53f53f",
+              "s3BucketParameter": "AssetParameters0f139e59b5f1410709a30484fb9a0b4d1deef9a4a3cc6a7d58e921cf3d53f53fS3BucketB2B94C6A",
+              "s3KeyParameter": "AssetParameters0f139e59b5f1410709a30484fb9a0b4d1deef9a4a3cc6a7d58e921cf3d53f53fS3VersionKeyB45F8B1F",
+              "artifactHashParameter": "AssetParameters0f139e59b5f1410709a30484fb9a0b4d1deef9a4a3cc6a7d58e921cf3d53f53fArtifactHash1C705624"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/construct-compat.js:310:62)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:130:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:58:25)",
+              "GreengrassStreamManagerStack.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack.js:353:33)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:62:31)",
+              "new Asset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:36:44)",
+              "AssetCode.bind (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/code.js:137:26)",
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:80:33)",
+              "new GreengrassLambdaStreamAggregator (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/lambda-gg-stream-aggregator/lambda-gg-stream-aggregator.js:9:34)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:135:42)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          },
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.d67f58c5abf07c05f00f1ae6b28feb90df968f2075664b467e918b5ae77d351d",
+              "id": "d67f58c5abf07c05f00f1ae6b28feb90df968f2075664b467e918b5ae77d351d",
+              "packaging": "zip",
+              "sourceHash": "d67f58c5abf07c05f00f1ae6b28feb90df968f2075664b467e918b5ae77d351d",
+              "s3BucketParameter": "AssetParametersd67f58c5abf07c05f00f1ae6b28feb90df968f2075664b467e918b5ae77d351dS3BucketEC2889FD",
+              "s3KeyParameter": "AssetParametersd67f58c5abf07c05f00f1ae6b28feb90df968f2075664b467e918b5ae77d351dS3VersionKey6BB031F0",
+              "artifactHashParameter": "AssetParametersd67f58c5abf07c05f00f1ae6b28feb90df968f2075664b467e918b5ae77d351dArtifactHash511EE69E"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/construct-compat.js:310:62)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:130:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:58:25)",
+              "GreengrassStreamManagerStack.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack.js:353:33)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:62:31)",
+              "new Asset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:36:44)",
+              "AssetCode.bind (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/code.js:137:26)",
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:80:33)",
+              "SingletonFunction.ensureLambda (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:59:16)",
+              "new SingletonFunction (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:20:36)",
+              "new CustomResourceGreengrassManageDeployments (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/cr-greengrass-manage-deployments/cr-greengrass-manage-deployments.js:14:61)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:306:35)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/IotAnalyticsStack/Channel": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "IotAnalyticsStackChannelD9E3DFA2",
+            "trace": [
+              "new IoTAnalytics (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/iot-analytics/iot-analytics.js:8:25)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:47:34)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/IotAnalyticsStack/Datastore": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "IotAnalyticsStackDatastore134FBF85",
+            "trace": [
+              "new IoTAnalytics (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/iot-analytics/iot-analytics.js:13:27)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:47:34)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/IotAnalyticsStack/Pipeline": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "IotAnalyticsStackPipelineA100C45C",
+            "trace": [
+              "new IoTAnalytics (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/iot-analytics/iot-analytics.js:16:26)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:47:34)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/IotAnalyticsStack/SqlDataset": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "IotAnalyticsStackSqlDataset1134A62A",
+            "trace": [
+              "new IoTAnalytics (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/iot-analytics/iot-analytics.js:32:27)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:47:34)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/KinesisStream/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "KinesisStream46752A3E",
+            "trace": [
+              "new Stream (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-kinesis/lib/stream.js:91:23)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:56:31)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/AwsCdkKinesisEncryptedStreamsUnsupportedRegions": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AwsCdkKinesisEncryptedStreamsUnsupportedRegions",
+            "trace": [
+              "Stream.parseEncryption (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-kinesis/lib/stream.js:145:17)",
+              "new Stream (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-kinesis/lib/stream.js:90:58)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:56:31)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/CreateThingCertPolicyCustomResource/Resource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CreateThingCertPolicyCustomResourceFE72F68F",
+            "trace": [
+              "new CustomResource (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/custom-resource.js:24:25)",
+              "new CustomResource (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-cloudformation/lib/custom-resource.js:50:9)",
+              "new CustomResourceIoTThingCertPolicy (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/cr-create-iot-thing-cert-policy/cr-iot-thing-cert-policy.js:14:26)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:60:31)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/SingletonLambda3f332eedc7735e3eba42f6331d6b0ab3/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SingletonLambda3f332eedc7735e3eba42f6331d6b0ab3ServiceRole4EB1C900",
+            "trace": [
+              "new Role (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-iam/lib/role.js:42:22)",
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:62:35)",
+              "SingletonFunction.ensureLambda (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:59:16)",
+              "new SingletonFunction (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:20:36)",
+              "new CustomResourceIoTThingCertPolicy (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/cr-create-iot-thing-cert-policy/cr-iot-thing-cert-policy.js:15:61)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:60:31)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/SingletonLambda3f332eedc7735e3eba42f6331d6b0ab3/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SingletonLambda3f332eedc7735e3eba42f6331d6b0ab3ServiceRoleDefaultPolicy44A44F5A",
+            "trace": [
+              "new Policy (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-iam/lib/policy.js:31:26)",
+              "Role.addToPrincipalPolicy (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-iam/lib/role.js:165:34)",
+              "Role.addToPolicy (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-iam/lib/role.js:172:21)",
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:78:23)",
+              "SingletonFunction.ensureLambda (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:59:16)",
+              "new SingletonFunction (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:20:36)",
+              "new CustomResourceIoTThingCertPolicy (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/cr-create-iot-thing-cert-policy/cr-iot-thing-cert-policy.js:15:61)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:60:31)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/SingletonLambda3f332eedc7735e3eba42f6331d6b0ab3/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SingletonLambda3f332eedc7735e3eba42f6331d6b0ab3B19759EE",
+            "trace": [
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:83:26)",
+              "SingletonFunction.ensureLambda (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:59:16)",
+              "new SingletonFunction (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:20:36)",
+              "new CustomResourceIoTThingCertPolicy (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/cr-create-iot-thing-cert-policy/cr-iot-thing-cert-policy.js:15:61)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:60:31)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/AssetParameters/4b7e9b2c1a9e2979940ae3e73b8adfef74b70f7d95cad0b07531bc516af60b04/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters4b7e9b2c1a9e2979940ae3e73b8adfef74b70f7d95cad0b07531bc516af60b04S3Bucket9D5E68E9",
+            "trace": [
+              "new FileAssetParameters (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:12:36)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:120:22)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:58:25)",
+              "GreengrassStreamManagerStack.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack.js:353:33)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:62:31)",
+              "new Asset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:36:44)",
+              "AssetCode.bind (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/code.js:137:26)",
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:80:33)",
+              "SingletonFunction.ensureLambda (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:59:16)",
+              "new SingletonFunction (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:20:36)",
+              "new CustomResourceIoTThingCertPolicy (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/cr-create-iot-thing-cert-policy/cr-iot-thing-cert-policy.js:15:61)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:60:31)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/AssetParameters/4b7e9b2c1a9e2979940ae3e73b8adfef74b70f7d95cad0b07531bc516af60b04/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters4b7e9b2c1a9e2979940ae3e73b8adfef74b70f7d95cad0b07531bc516af60b04S3VersionKeyF5111ACE",
+            "trace": [
+              "new FileAssetParameters (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:16:35)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:120:22)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:58:25)",
+              "GreengrassStreamManagerStack.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack.js:353:33)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:62:31)",
+              "new Asset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:36:44)",
+              "AssetCode.bind (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/code.js:137:26)",
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:80:33)",
+              "SingletonFunction.ensureLambda (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:59:16)",
+              "new SingletonFunction (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:20:36)",
+              "new CustomResourceIoTThingCertPolicy (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/cr-create-iot-thing-cert-policy/cr-iot-thing-cert-policy.js:15:61)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:60:31)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/AssetParameters/4b7e9b2c1a9e2979940ae3e73b8adfef74b70f7d95cad0b07531bc516af60b04/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters4b7e9b2c1a9e2979940ae3e73b8adfef74b70f7d95cad0b07531bc516af60b04ArtifactHashA3127768",
+            "trace": [
+              "new FileAssetParameters (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:20:38)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:120:22)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:58:25)",
+              "GreengrassStreamManagerStack.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack.js:353:33)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:62:31)",
+              "new Asset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:36:44)",
+              "AssetCode.bind (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/code.js:137:26)",
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:80:33)",
+              "SingletonFunction.ensureLambda (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:59:16)",
+              "new SingletonFunction (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:20:36)",
+              "new CustomResourceIoTThingCertPolicy (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/cr-create-iot-thing-cert-policy/cr-iot-thing-cert-policy.js:15:61)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:60:31)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/AssetParameters/3d690113f22f8ae282350741b95af566073d4b4aea152f367b4d9fe17e9ced8e/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters3d690113f22f8ae282350741b95af566073d4b4aea152f367b4d9fe17e9ced8eS3Bucket584CFD40",
+            "trace": [
+              "new FileAssetParameters (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:12:36)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:120:22)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:58:25)",
+              "GreengrassStreamManagerStack.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack.js:353:33)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:62:31)",
+              "new Asset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:36:44)",
+              "AssetCode.bind (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/code.js:137:26)",
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:80:33)",
+              "SingletonFunction.ensureLambda (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:59:16)",
+              "new SingletonFunction (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:20:36)",
+              "new CustomResourceGreengrassServiceRole (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/cr-greengrass-service-role/cr-greengrass-service-role.js:15:61)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:81:31)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/AssetParameters/3d690113f22f8ae282350741b95af566073d4b4aea152f367b4d9fe17e9ced8e/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters3d690113f22f8ae282350741b95af566073d4b4aea152f367b4d9fe17e9ced8eS3VersionKey65794BD9",
+            "trace": [
+              "new FileAssetParameters (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:16:35)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:120:22)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:58:25)",
+              "GreengrassStreamManagerStack.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack.js:353:33)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:62:31)",
+              "new Asset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:36:44)",
+              "AssetCode.bind (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/code.js:137:26)",
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:80:33)",
+              "SingletonFunction.ensureLambda (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:59:16)",
+              "new SingletonFunction (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:20:36)",
+              "new CustomResourceGreengrassServiceRole (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/cr-greengrass-service-role/cr-greengrass-service-role.js:15:61)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:81:31)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/AssetParameters/3d690113f22f8ae282350741b95af566073d4b4aea152f367b4d9fe17e9ced8e/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters3d690113f22f8ae282350741b95af566073d4b4aea152f367b4d9fe17e9ced8eArtifactHash9C6BEC06",
+            "trace": [
+              "new FileAssetParameters (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:20:38)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:120:22)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:58:25)",
+              "GreengrassStreamManagerStack.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack.js:353:33)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:62:31)",
+              "new Asset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:36:44)",
+              "AssetCode.bind (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/code.js:137:26)",
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:80:33)",
+              "SingletonFunction.ensureLambda (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:59:16)",
+              "new SingletonFunction (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:20:36)",
+              "new CustomResourceGreengrassServiceRole (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/cr-greengrass-service-role/cr-greengrass-service-role.js:15:61)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:81:31)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/AssetParameters/df1bc2ad542c1fc51dbd1b7d204f3d1199f217479d68afcb85aae0a37966b048/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersdf1bc2ad542c1fc51dbd1b7d204f3d1199f217479d68afcb85aae0a37966b048S3Bucket77A47E50",
+            "trace": [
+              "new FileAssetParameters (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:12:36)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:120:22)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:58:25)",
+              "GreengrassStreamManagerStack.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack.js:353:33)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:62:31)",
+              "new Asset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:36:44)",
+              "AssetCode.bind (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/code.js:137:26)",
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:80:33)",
+              "new GreengrassLambdaSensorSource (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/lambda-gg-sensor-source/lambda-gg-sensor-source.js:9:34)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:127:38)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/AssetParameters/df1bc2ad542c1fc51dbd1b7d204f3d1199f217479d68afcb85aae0a37966b048/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersdf1bc2ad542c1fc51dbd1b7d204f3d1199f217479d68afcb85aae0a37966b048S3VersionKey3A3A1F13",
+            "trace": [
+              "new FileAssetParameters (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:16:35)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:120:22)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:58:25)",
+              "GreengrassStreamManagerStack.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack.js:353:33)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:62:31)",
+              "new Asset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:36:44)",
+              "AssetCode.bind (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/code.js:137:26)",
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:80:33)",
+              "new GreengrassLambdaSensorSource (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/lambda-gg-sensor-source/lambda-gg-sensor-source.js:9:34)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:127:38)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/AssetParameters/df1bc2ad542c1fc51dbd1b7d204f3d1199f217479d68afcb85aae0a37966b048/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersdf1bc2ad542c1fc51dbd1b7d204f3d1199f217479d68afcb85aae0a37966b048ArtifactHash108B5C70",
+            "trace": [
+              "new FileAssetParameters (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:20:38)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:120:22)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:58:25)",
+              "GreengrassStreamManagerStack.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack.js:353:33)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:62:31)",
+              "new Asset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:36:44)",
+              "AssetCode.bind (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/code.js:137:26)",
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:80:33)",
+              "new GreengrassLambdaSensorSource (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/lambda-gg-sensor-source/lambda-gg-sensor-source.js:9:34)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:127:38)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/AssetParameters/5a8dbcac5919f2c70ce85467237d6f7b3d4af9b99587efb62290cb8704bdba44/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters5a8dbcac5919f2c70ce85467237d6f7b3d4af9b99587efb62290cb8704bdba44S3Bucket1C66E62E",
+            "trace": [
+              "new FileAssetParameters (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:12:36)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:120:22)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:58:25)",
+              "GreengrassStreamManagerStack.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack.js:353:33)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:62:31)",
+              "new Asset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:36:44)",
+              "AssetCode.bind (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/code.js:137:26)",
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:80:33)",
+              "new GreengrassLambdaStreamProducer (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/lambda-gg-stream-producer/lambda-gg-stream-producer.js:9:34)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:131:40)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/AssetParameters/5a8dbcac5919f2c70ce85467237d6f7b3d4af9b99587efb62290cb8704bdba44/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters5a8dbcac5919f2c70ce85467237d6f7b3d4af9b99587efb62290cb8704bdba44S3VersionKey5AF3969D",
+            "trace": [
+              "new FileAssetParameters (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:16:35)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:120:22)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:58:25)",
+              "GreengrassStreamManagerStack.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack.js:353:33)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:62:31)",
+              "new Asset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:36:44)",
+              "AssetCode.bind (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/code.js:137:26)",
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:80:33)",
+              "new GreengrassLambdaStreamProducer (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/lambda-gg-stream-producer/lambda-gg-stream-producer.js:9:34)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:131:40)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/AssetParameters/5a8dbcac5919f2c70ce85467237d6f7b3d4af9b99587efb62290cb8704bdba44/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters5a8dbcac5919f2c70ce85467237d6f7b3d4af9b99587efb62290cb8704bdba44ArtifactHashA22B2F8E",
+            "trace": [
+              "new FileAssetParameters (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:20:38)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:120:22)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:58:25)",
+              "GreengrassStreamManagerStack.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack.js:353:33)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:62:31)",
+              "new Asset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:36:44)",
+              "AssetCode.bind (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/code.js:137:26)",
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:80:33)",
+              "new GreengrassLambdaStreamProducer (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/lambda-gg-stream-producer/lambda-gg-stream-producer.js:9:34)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:131:40)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/AssetParameters/0f139e59b5f1410709a30484fb9a0b4d1deef9a4a3cc6a7d58e921cf3d53f53f/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters0f139e59b5f1410709a30484fb9a0b4d1deef9a4a3cc6a7d58e921cf3d53f53fS3BucketB2B94C6A",
+            "trace": [
+              "new FileAssetParameters (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:12:36)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:120:22)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:58:25)",
+              "GreengrassStreamManagerStack.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack.js:353:33)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:62:31)",
+              "new Asset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:36:44)",
+              "AssetCode.bind (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/code.js:137:26)",
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:80:33)",
+              "new GreengrassLambdaStreamAggregator (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/lambda-gg-stream-aggregator/lambda-gg-stream-aggregator.js:9:34)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:135:42)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/AssetParameters/0f139e59b5f1410709a30484fb9a0b4d1deef9a4a3cc6a7d58e921cf3d53f53f/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters0f139e59b5f1410709a30484fb9a0b4d1deef9a4a3cc6a7d58e921cf3d53f53fS3VersionKeyB45F8B1F",
+            "trace": [
+              "new FileAssetParameters (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:16:35)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:120:22)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:58:25)",
+              "GreengrassStreamManagerStack.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack.js:353:33)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:62:31)",
+              "new Asset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:36:44)",
+              "AssetCode.bind (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/code.js:137:26)",
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:80:33)",
+              "new GreengrassLambdaStreamAggregator (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/lambda-gg-stream-aggregator/lambda-gg-stream-aggregator.js:9:34)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:135:42)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/AssetParameters/0f139e59b5f1410709a30484fb9a0b4d1deef9a4a3cc6a7d58e921cf3d53f53f/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters0f139e59b5f1410709a30484fb9a0b4d1deef9a4a3cc6a7d58e921cf3d53f53fArtifactHash1C705624",
+            "trace": [
+              "new FileAssetParameters (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:20:38)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:120:22)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:58:25)",
+              "GreengrassStreamManagerStack.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack.js:353:33)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:62:31)",
+              "new Asset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:36:44)",
+              "AssetCode.bind (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/code.js:137:26)",
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:80:33)",
+              "new GreengrassLambdaStreamAggregator (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/lambda-gg-stream-aggregator/lambda-gg-stream-aggregator.js:9:34)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:135:42)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/AssetParameters/d67f58c5abf07c05f00f1ae6b28feb90df968f2075664b467e918b5ae77d351d/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersd67f58c5abf07c05f00f1ae6b28feb90df968f2075664b467e918b5ae77d351dS3BucketEC2889FD",
+            "trace": [
+              "new FileAssetParameters (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:12:36)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:120:22)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:58:25)",
+              "GreengrassStreamManagerStack.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack.js:353:33)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:62:31)",
+              "new Asset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:36:44)",
+              "AssetCode.bind (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/code.js:137:26)",
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:80:33)",
+              "SingletonFunction.ensureLambda (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:59:16)",
+              "new SingletonFunction (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:20:36)",
+              "new CustomResourceGreengrassManageDeployments (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/cr-greengrass-manage-deployments/cr-greengrass-manage-deployments.js:14:61)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:306:35)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/AssetParameters/d67f58c5abf07c05f00f1ae6b28feb90df968f2075664b467e918b5ae77d351d/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersd67f58c5abf07c05f00f1ae6b28feb90df968f2075664b467e918b5ae77d351dS3VersionKey6BB031F0",
+            "trace": [
+              "new FileAssetParameters (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:16:35)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:120:22)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:58:25)",
+              "GreengrassStreamManagerStack.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack.js:353:33)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:62:31)",
+              "new Asset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:36:44)",
+              "AssetCode.bind (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/code.js:137:26)",
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:80:33)",
+              "SingletonFunction.ensureLambda (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:59:16)",
+              "new SingletonFunction (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:20:36)",
+              "new CustomResourceGreengrassManageDeployments (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/cr-greengrass-manage-deployments/cr-greengrass-manage-deployments.js:14:61)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:306:35)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/AssetParameters/d67f58c5abf07c05f00f1ae6b28feb90df968f2075664b467e918b5ae77d351d/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersd67f58c5abf07c05f00f1ae6b28feb90df968f2075664b467e918b5ae77d351dArtifactHash511EE69E",
+            "trace": [
+              "new FileAssetParameters (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:20:38)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:120:22)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:58:25)",
+              "GreengrassStreamManagerStack.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack.js:353:33)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:62:31)",
+              "new Asset (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:36:44)",
+              "AssetCode.bind (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/code.js:137:26)",
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:80:33)",
+              "SingletonFunction.ensureLambda (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:59:16)",
+              "new SingletonFunction (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:20:36)",
+              "new CustomResourceGreengrassManageDeployments (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/cr-greengrass-manage-deployments/cr-greengrass-manage-deployments.js:14:61)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:306:35)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/CertificatePEM": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CertificatePEM",
+            "trace": [
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:64:9)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/PrivateKeyPEM": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PrivateKeyPEM",
+            "trace": [
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:68:9)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/ThingArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ThingArn",
+            "trace": [
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:72:9)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/EndpointDataAts": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EndpointDataAts",
+            "trace": [
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:76:9)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/GreengrassRoleCustomResource/Resource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GreengrassRoleCustomResource21FB6A40",
+            "trace": [
+              "new CustomResource (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/custom-resource.js:24:25)",
+              "new CustomResource (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-cloudformation/lib/custom-resource.js:50:9)",
+              "new CustomResourceGreengrassServiceRole (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/cr-greengrass-service-role/cr-greengrass-service-role.js:14:26)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:81:31)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/SingletonLambda41245b6ce6b355bc880586a38305b794/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SingletonLambda41245b6ce6b355bc880586a38305b794ServiceRole032511C2",
+            "trace": [
+              "new Role (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-iam/lib/role.js:42:22)",
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:62:35)",
+              "SingletonFunction.ensureLambda (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:59:16)",
+              "new SingletonFunction (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:20:36)",
+              "new CustomResourceGreengrassServiceRole (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/cr-greengrass-service-role/cr-greengrass-service-role.js:15:61)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:81:31)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/SingletonLambda41245b6ce6b355bc880586a38305b794/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SingletonLambda41245b6ce6b355bc880586a38305b794ServiceRoleDefaultPolicy6BBD5069",
+            "trace": [
+              "new Policy (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-iam/lib/policy.js:31:26)",
+              "Role.addToPrincipalPolicy (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-iam/lib/role.js:165:34)",
+              "Role.addToPolicy (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-iam/lib/role.js:172:21)",
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:78:23)",
+              "SingletonFunction.ensureLambda (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:59:16)",
+              "new SingletonFunction (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:20:36)",
+              "new CustomResourceGreengrassServiceRole (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/cr-greengrass-service-role/cr-greengrass-service-role.js:15:61)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:81:31)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/SingletonLambda41245b6ce6b355bc880586a38305b794/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SingletonLambda41245b6ce6b355bc880586a38305b794DB698433",
+            "trace": [
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:83:26)",
+              "SingletonFunction.ensureLambda (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:59:16)",
+              "new SingletonFunction (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:20:36)",
+              "new CustomResourceGreengrassServiceRole (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/cr-greengrass-service-role/cr-greengrass-service-role.js:15:61)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:81:31)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/GreengrassLambdaSensorSource/gg-battery-predict-SensorSource/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GreengrassLambdaSensorSourceggbatterypredictSensorSourceServiceRoleF0628769",
+            "trace": [
+              "new Role (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-iam/lib/role.js:42:22)",
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:62:35)",
+              "new GreengrassLambdaSensorSource (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/lambda-gg-sensor-source/lambda-gg-sensor-source.js:9:34)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:127:38)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/GreengrassLambdaSensorSource/gg-battery-predict-SensorSource/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GreengrassLambdaSensorSourceggbatterypredictSensorSourceE60E3BA9",
+            "trace": [
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:83:26)",
+              "new GreengrassLambdaSensorSource (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/lambda-gg-sensor-source/lambda-gg-sensor-source.js:9:34)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:127:38)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/GreengrassLambdaSensorSource/gg-battery-predict-SensorSource/VersionFunctionVersionPlaceholder/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GreengrassLambdaSensorSourceggbatterypredictSensorSourceVersionFunctionVersionPlaceholder748610F9",
+            "trace": [
+              "new Version (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/lambda-version.js:30:25)",
+              "Function.addVersion (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:329:16)",
+              "new GreengrassLambdaSensorSource (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/lambda-gg-sensor-source/lambda-gg-sensor-source.js:15:42)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:127:38)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/GreengrassLambdaSensorSource/gg-battery-predict-GreengrassSampleAlias/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GreengrassLambdaSensorSourceggbatterypredictGreengrassSampleAlias18C3FBA2",
+            "trace": [
+              "new Alias (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/alias.js:19:23)",
+              "new GreengrassLambdaSensorSource (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/lambda-gg-sensor-source/lambda-gg-sensor-source.js:17:38)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:127:38)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/GreengrassLambdaStreamProducer/gg-battery-predict-StreamProducer/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GreengrassLambdaStreamProducerggbatterypredictStreamProducerServiceRole5B2CD846",
+            "trace": [
+              "new Role (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-iam/lib/role.js:42:22)",
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:62:35)",
+              "new GreengrassLambdaStreamProducer (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/lambda-gg-stream-producer/lambda-gg-stream-producer.js:9:34)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:131:40)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/GreengrassLambdaStreamProducer/gg-battery-predict-StreamProducer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GreengrassLambdaStreamProducerggbatterypredictStreamProducerF1640B27",
+            "trace": [
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:83:26)",
+              "new GreengrassLambdaStreamProducer (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/lambda-gg-stream-producer/lambda-gg-stream-producer.js:9:34)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:131:40)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/GreengrassLambdaStreamProducer/gg-battery-predict-StreamProducer/VersionFunctionVersionPlaceholder/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GreengrassLambdaStreamProducerggbatterypredictStreamProducerVersionFunctionVersionPlaceholderF7596C5D",
+            "trace": [
+              "new Version (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/lambda-version.js:30:25)",
+              "Function.addVersion (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:329:16)",
+              "new GreengrassLambdaStreamProducer (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/lambda-gg-stream-producer/lambda-gg-stream-producer.js:15:42)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:131:40)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/GreengrassLambdaStreamProducer/gg-battery-predict-GreengrassSampleAlias/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GreengrassLambdaStreamProducerggbatterypredictGreengrassSampleAlias0004DB03",
+            "trace": [
+              "new Alias (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/alias.js:19:23)",
+              "new GreengrassLambdaStreamProducer (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/lambda-gg-stream-producer/lambda-gg-stream-producer.js:17:38)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:131:40)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/GreengrassLambdaStreamAggregator/gg-battery-predict-StreamAggregator/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GreengrassLambdaStreamAggregatorggbatterypredictStreamAggregatorServiceRole8FF79930",
+            "trace": [
+              "new Role (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-iam/lib/role.js:42:22)",
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:62:35)",
+              "new GreengrassLambdaStreamAggregator (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/lambda-gg-stream-aggregator/lambda-gg-stream-aggregator.js:9:34)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:135:42)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/GreengrassLambdaStreamAggregator/gg-battery-predict-StreamAggregator/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GreengrassLambdaStreamAggregatorggbatterypredictStreamAggregator53B55060",
+            "trace": [
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:83:26)",
+              "new GreengrassLambdaStreamAggregator (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/lambda-gg-stream-aggregator/lambda-gg-stream-aggregator.js:9:34)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:135:42)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/GreengrassLambdaStreamAggregator/gg-battery-predict-StreamAggregator/VersionFunctionVersionPlaceholder/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GreengrassLambdaStreamAggregatorggbatterypredictStreamAggregatorVersionFunctionVersionPlaceholder435DE94E",
+            "trace": [
+              "new Version (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/lambda-version.js:30:25)",
+              "Function.addVersion (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:329:16)",
+              "new GreengrassLambdaStreamAggregator (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/lambda-gg-stream-aggregator/lambda-gg-stream-aggregator.js:15:42)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:135:42)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/GreengrassLambdaStreamAggregator/gg-battery-predict-GreengrassSampleAlias/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GreengrassLambdaStreamAggregatorggbatterypredictGreengrassSampleAlias664B75B2",
+            "trace": [
+              "new Alias (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/alias.js:19:23)",
+              "new GreengrassLambdaStreamAggregator (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/lambda-gg-stream-aggregator/lambda-gg-stream-aggregator.js:17:38)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:135:42)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/CoreDefinition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CoreDefinition",
+            "trace": [
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:143:32)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/FunctionDefinition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FunctionDefinition",
+            "trace": [
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:157:36)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/FunctionDefinitionVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FunctionDefinitionVersion",
+            "trace": [
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:163:43)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/ConnectorDefinition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ConnectorDefinition",
+            "trace": [
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:223:37)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/SubscriptionDefinition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionDefinition",
+            "trace": [
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:239:40)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/LoggerDefinition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LoggerDefinition",
+            "trace": [
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:253:34)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/GreengrassGroup3": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GreengrassGroup3",
+            "trace": [
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:288:33)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/GreengrassGroupVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GreengrassGroupVersion",
+            "trace": [
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:293:40)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/GreengrassManageDeploymentsResource/Resource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GreengrassManageDeploymentsResourceDEDD7338",
+            "trace": [
+              "new CustomResource (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/core/lib/custom-resource.js:24:25)",
+              "new CustomResource (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-cloudformation/lib/custom-resource.js:50:9)",
+              "new CustomResourceGreengrassManageDeployments (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/cr-greengrass-manage-deployments/cr-greengrass-manage-deployments.js:13:9)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:306:35)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/SingletonLambdae44f06b61f0b58adacd64b38dc0e9d4f/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SingletonLambdae44f06b61f0b58adacd64b38dc0e9d4fServiceRole4E078A2B",
+            "trace": [
+              "new Role (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-iam/lib/role.js:42:22)",
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:62:35)",
+              "SingletonFunction.ensureLambda (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:59:16)",
+              "new SingletonFunction (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:20:36)",
+              "new CustomResourceGreengrassManageDeployments (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/cr-greengrass-manage-deployments/cr-greengrass-manage-deployments.js:14:61)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:306:35)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/SingletonLambdae44f06b61f0b58adacd64b38dc0e9d4f/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SingletonLambdae44f06b61f0b58adacd64b38dc0e9d4fServiceRoleDefaultPolicy536B21E2",
+            "trace": [
+              "new Policy (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-iam/lib/policy.js:31:26)",
+              "Role.addToPrincipalPolicy (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-iam/lib/role.js:165:34)",
+              "Role.addToPolicy (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-iam/lib/role.js:172:21)",
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:78:23)",
+              "SingletonFunction.ensureLambda (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:59:16)",
+              "new SingletonFunction (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:20:36)",
+              "new CustomResourceGreengrassManageDeployments (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/cr-greengrass-manage-deployments/cr-greengrass-manage-deployments.js:14:61)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:306:35)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ],
+        "/gg-battery-predict/SingletonLambdae44f06b61f0b58adacd64b38dc0e9d4f/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SingletonLambdae44f06b61f0b58adacd64b38dc0e9d4fD67875CA",
+            "trace": [
+              "new Function (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/function.js:83:26)",
+              "SingletonFunction.ensureLambda (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:59:16)",
+              "new SingletonFunction (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:20:36)",
+              "new CustomResourceGreengrassManageDeployments (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/cr-greengrass-manage-deployments/cr-greengrass-manage-deployments.js:14:61)",
+              "new GreengrassStreamManagerStack (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:306:35)",
+              "Object.<anonymous> (/Users/smueller/source/test/accenture/battery-predictor-greengrass/greengrass/cdk/index.js:319:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "startup (internal/bootstrap/node.js:283:19)",
+              "bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "runtime": {
+    "libraries": {
+      "@aws-cdk/core": "1.50.0",
+      "@aws-cdk/cx-api": "1.50.0",
+      "@aws-cdk/cloud-assembly-schema": "1.50.0",
+      "@aws-cdk/aws-greengrass": "1.50.0",
+      "@aws-cdk/aws-kinesis": "1.50.0",
+      "@aws-cdk/aws-iam": "1.50.0",
+      "@aws-cdk/region-info": "1.50.0",
+      "@aws-cdk/aws-kms": "1.50.0",
+      "@aws-cdk/aws-iotanalytics": "1.50.0",
+      "@aws-cdk/aws-cloudformation": "1.50.0",
+      "@aws-cdk/aws-lambda": "1.50.0",
+      "@aws-cdk/aws-cloudwatch": "1.50.0",
+      "@aws-cdk/aws-ec2": "1.50.0",
+      "@aws-cdk/aws-ssm": "1.50.0",
+      "@aws-cdk/aws-logs": "1.50.0",
+      "@aws-cdk/aws-s3": "1.50.0",
+      "@aws-cdk/aws-events": "1.50.0",
+      "@aws-cdk/aws-sqs": "1.50.0",
+      "@aws-cdk/aws-s3-assets": "1.50.0",
+      "@aws-cdk/assets": "1.50.0",
+      "jsii-runtime": "node.js/v10.23.0"
+    }
+  }
+}

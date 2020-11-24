@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Greengrass Managed Container Demo</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1 align="center">Battery Forecast Dashboard</h1>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <canvas id="temp-canvas"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-striped">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Device ID</th>
+                      <th scope="col">Voltage</th>
+                      <th scope="col">Time left (s)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr id="dev1">
+                      <th scope="row">1</th>
+                      <td class="voltage"></td>
+                      <td class="time_left"></td>
+                    </tr>
+                    <tr id="dev2">
+                      <th scope="row">2</th>
+                      <td class="voltage"></td>
+                      <td class="time_left"></td>
+                    </tr>
+                    <tr id="dev3">
+                      <th scope="row">3</th>
+                      <td class="voltage"></td>
+                      <td class="time_left"></td>
+                    </tr>
+                    <tr id="dev4">
+                      <th scope="row">4</th>
+                      <td class="voltage"></td>
+                      <td class="time_left"></td>
+                    </tr>
+                    <tr id="dev5">
+                      <th scope="row">5</th>
+                      <td class="voltage"></td>
+                      <td class="time_left"></td>
+                    </tr>
+                    <tr id="dev6">
+                      <th scope="row">6</th>
+                      <td class="voltage"></td>
+                      <td class="time_left"></td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!--suppress JSUnresolvedLibraryURL -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <!--suppress JSUnresolvedLibraryURL -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!--suppress JSUnresolvedLibraryURL -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // voltage config
+            const voltage_config = {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: "Device 1",
+                        yAxisID: 'A',
+                        backgroundColor: 'rgb(64, 255, 64)',
+                        borderColor: 'rgb(64, 255, 64)',
+                        data: [],
+                        fill: false,
+                    },
+                    {
+                        label: "Device 2",
+                        yAxisID: 'A',
+                        backgroundColor: 'rgb(164, 155, 264)',
+                        borderColor: 'rgb(164, 155, 264)',
+                        data: [],
+                        fill: false,
+                    },
+                    {
+                        label: "Device 3",
+                        yAxisID: 'A',
+                        backgroundColor: 'rgb(24, 0, 164)',
+                        borderColor: 'rgb(24, 0, 164)',
+                        data: [],
+                        fill: false,
+                    },
+                    {
+                        label: "Device 4",
+                        yAxisID: 'A',
+                        backgroundColor: 'rgb(244, 0, 164)',
+                        borderColor: 'rgb(244, 0, 164)',
+                        data: [],
+                        fill: false,
+                    },
+                    {
+                        label: "Device 5",
+                        yAxisID: 'A',
+                        backgroundColor: 'rgb(24, 200, 0)',
+                        borderColor: 'rgb(24, 200, 0)',
+                        data: [],
+                        fill: false,
+                    },
+                    {
+                        label: "Device 6",
+                        yAxisID: 'A',
+                        backgroundColor: 'rgb(224, 244, 4)',
+                        borderColor: 'rgb(224, 244, 4)',
+                        data: [],
+                        fill: false,
+                    }],
+                },
+                options: {
+                    responsive: true,
+                    title: {
+                        display: true,
+                        text: 'Voltage'
+                    },
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    hover: {
+                        mode: 'nearest',
+                        intersect: true
+                    },
+                    scales: {
+                        xAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Time'
+                            }
+                        }],
+                        yAxes: [{
+                            id: 'A',
+                            type: 'linear',
+                            position: 'left',
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Volt'
+                            }
+                        }]
+                    }
+                }
+            };
+
+
+            const context = document.getElementById('temp-canvas').getContext('2d');
+
+            const lineChart = new Chart(context, voltage_config);
+
+            const source = new EventSource("/chart-data");
+
+            source.onmessage = function (event) {
+                const dataArr = JSON.parse(event.data);
+                console.log(dataArr);
+                var latest_time;
+                dataArr.forEach(data => {
+                    if (voltage_config.data.labels.length === 20) {
+                        voltage_config.data.labels.shift();
+                        voltage_config.data.datasets[data.device_id - 1].data.shift();
+                    }
+                    voltage_config.data.datasets[data.device_id - 1].data.push(data.current_voltage);
+                    latest_time = data.time;
+
+                    $(`#dev${data.device_id} .voltage`).text(data.current_voltage.toPrecision(3));
+                    $(`#dev${data.device_id} .time_left`).text(data.time_left);
+                })
+                voltage_config.data.labels.push(latest_time);
+                lineChart.update();
+
+            }
+        });
+    </script>
+</body>
+
+</html>
